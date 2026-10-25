@@ -1,0 +1,2658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Nilkamal Furniture Flagship Showroom | Jamnagar - Shubh Deepavali 2026 Collection</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@300;400;500;600;700;800&family=Rozha+One&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Three.js for 3D Geometry and Wireframe Bounding Box -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Canvas Confetti for Diwali Wins -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            diwali: ['"Rozha One"', 'serif'],
+            royal: ['Cinzel', 'serif']
+          },
+          colors: {
+            brand: {
+              red: '#C8102E',      /* Official Nilkamal Red */
+              darkred: '#8A0A1E',
+              gold: '#D97706',     /* Diwali Golden Amber */
+              marigold: '#F59E0B',
+              diwaliGold: '#FBBF24',
+              surface: '#FFFFFF',
+              dark: '#0F172A'
+            }
+          },
+          boxShadow: {
+            'diwali': '0 10px 30px -5px rgba(245, 158, 11, 0.28), 0 8px 10px -6px rgba(200, 16, 46, 0.15)',
+            'diwali-glow': '0 0 25px rgba(251, 191, 36, 0.55)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #FFFDF9;
+      background-image: 
+        radial-gradient(rgba(245, 158, 11, 0.12) 1px, transparent 1px), 
+        radial-gradient(rgba(200, 16, 46, 0.08) 1px, #FFFDF9 1px);
+      background-size: 32px 32px;
+      background-position: 0 0, 16px 16px;
+      overflow-x: hidden;
+    }
+
+    @keyframes flameFlicker {
+      0%, 100% { transform: scale(1) translateY(0); filter: drop-shadow(0 0 6px #F59E0B); }
+      50% { transform: scale(1.12) translateY(-2px); filter: drop-shadow(0 0 16px #FBBF24); }
+    }
+    .diya-flame {
+      display: inline-block;
+      animation: flameFlicker 2s infinite ease-in-out;
+    }
+
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .bounding-box-3d {
+      position: absolute;
+      pointer-events: none;
+      border: 2px dashed #0D9488;
+      box-shadow: 0 0 16px rgba(13, 148, 136, 0.4), inset 0 0 16px rgba(13, 148, 136, 0.15);
+      transform-style: preserve-3d;
+    }
+  </style>
+</head>
+
+<body class="text-slate-800 antialiased selection:bg-brand-red selection:text-white flex flex-col min-h-screen">
+
+  <!-- ================= TOP DIWALI NOTICE ================= -->
+  <div class="bg-gradient-to-r from-brand-red via-brand-gold to-brand-red text-white py-1.5 px-4 text-xs font-medium shadow-md relative z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center space-x-2">
+        <span class="text-base diya-flame">🪔</span>
+        <span>
+          <strong class="font-bold text-amber-200">શુભ દીપાવલી 2026:</strong> Nilkamal Indira Marg Jamnagar Showroom • Flat ₹500 - 20% OFF!
+        </span>
+      </div>
+      <div class="flex items-center space-x-3 text-xs text-amber-100">
+        <button onclick="openSpinWheelModal()" class="px-2.5 py-0.5 rounded-full bg-amber-400 text-slate-900 font-extrabold flex items-center gap-1 shadow hover:bg-amber-300 transition animate-pulse">
+          <i class="fa-solid fa-dharmachakra"></i> Diwali Spin & Win!
+        </button>
+        <span class="hidden sm:inline">•</span>
+        <span class="hidden sm:inline flex items-center gap-1"><i class="fa-solid fa-truck-fast"></i> 24h Express Delivery Jamnagar</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MAIN HEADER ================= -->
+  <header class="sticky top-0 z-40 glass-nav border-b border-amber-200/60 shadow-sm transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Brand Logo -->
+        <div class="flex items-center gap-3 cursor-pointer" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+          <div class="w-12 h-12 bg-gradient-to-br from-brand-red to-brand-darkred rounded-2xl flex items-center justify-center shadow-md text-white font-black text-2xl border-2 border-amber-300 transform transition hover:rotate-2">
+            N
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <span class="font-extrabold text-2xl tracking-tight text-brand-red">Nilkamal</span>
+              <span class="text-[10px] bg-amber-100 text-amber-900 font-extrabold px-2 py-0.5 rounded-full border border-amber-300 flex items-center gap-1">
+                🪔 Deepavali 2026
+              </span>
+            </div>
+            <p class="text-[11px] font-medium text-slate-500 flex items-center gap-1">
+              <i class="fa-solid fa-location-dot text-brand-red text-[10px]"></i> Indira Marg, Jamnagar, Gujarat
+            </p>
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav class="hidden lg:flex items-center space-x-5 font-medium text-xs sm:text-sm text-slate-700">
+          <a href="#all-categories" onclick="scrollToSection('categories-hub')" class="hover:text-brand-red transition-colors font-bold">All Categories</a>
+          <a href="#sofas" onclick="scrollToCategorySection('Living')" class="hover:text-brand-red transition-colors">Sofas</a>
+          <a href="#bedroom" onclick="scrollToCategorySection('Bedroom')" class="hover:text-brand-red transition-colors">Beds & Almirahs</a>
+          <a href="#dining" onclick="scrollToCategorySection('Dining')" class="hover:text-brand-red transition-colors">Dining</a>
+          <a href="#plastic" onclick="scrollToCategorySection('Plastic')" class="hover:text-brand-red transition-colors">Nilkamal Chairs</a>
+          <a href="#office" onclick="scrollToCategorySection('Office')" class="hover:text-brand-red transition-colors">Office</a>
+          <a href="#storage" onclick="scrollToCategorySection('Storage')" class="hover:text-brand-red transition-colors">Storage & Cabinets</a>
+
+          <!-- Studio Modals -->
+          <button onclick="openGlobal360Modal()" class="flex items-center gap-1.5 px-3 py-1.5 bg-amber-50 text-amber-900 rounded-full border border-amber-300 hover:bg-amber-100 transition shadow-sm text-xs font-bold">
+            <i class="fa-solid fa-arrows-spin text-brand-red"></i> 360° Studio
+          </button>
+
+          <button onclick="openGlobalARModal()" class="flex items-center gap-1.5 px-3.5 py-1.5 bg-teal-600 text-white rounded-full hover:bg-teal-700 transition text-xs font-bold shadow-sm">
+            <i class="fa-solid fa-vector-square"></i> 3D Border AR
+          </button>
+        </nav>
+
+        <!-- Right Toolbelt -->
+        <div class="flex items-center space-x-2 sm:space-x-3">
+          <div class="relative hidden md:block w-44 xl:w-56">
+            <input type="text" oninput="handleSearch(this.value)" placeholder="Search bed, sofa, almirah..." 
+              class="w-full bg-slate-50 border border-slate-200 rounded-full pl-8 pr-3 py-1.5 text-xs focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-red/30">
+            <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-slate-400 text-xs"></i>
+          </div>
+
+          <button onclick="toggleWishlistModal()" class="relative p-2 text-slate-600 hover:text-brand-red hover:bg-red-50 rounded-full transition">
+            <i class="fa-regular fa-heart text-lg"></i>
+            <span id="wishlistBadge" class="absolute top-0 right-0 w-4 h-4 bg-brand-red text-white text-[10px] font-bold rounded-full flex items-center justify-center">0</span>
+          </button>
+
+          <button onclick="toggleCartDrawer()" class="relative p-2 text-slate-600 hover:text-brand-red hover:bg-red-50 rounded-full transition">
+            <i class="fa-solid fa-bag-shopping text-lg"></i>
+            <span id="cartBadge" class="absolute top-0 right-0 w-4 h-4 bg-brand-red text-white text-[10px] font-bold rounded-full flex items-center justify-center">0</span>
+          </button>
+
+          <button onclick="openCalculatorModal()" class="p-2 bg-amber-500/10 text-amber-700 hover:bg-amber-500/20 rounded-full transition" title="Showroom Price & Math Calculator">
+            <i class="fa-solid fa-calculator text-base"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO SHOWCASE ================= -->
+  <section class="relative overflow-hidden pt-8 pb-14 bg-gradient-to-b from-amber-50/40 via-white to-red-50/20 border-b border-amber-200/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <div class="lg:col-span-7 space-y-5 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-100 text-amber-900 text-xs font-bold border border-amber-300 shadow-sm">
+            <span>🪔</span> Shubh Deepavali 2026 • Jamnagar Complete Showroom Catalogue <span>🪔</span>
+          </div>
+          
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 leading-[1.12]">
+            Every Nilkamal Product for Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-red via-brand-gold to-brand-red">Diwali Home</span>
+          </h1>
+
+          <p class="text-sm sm:text-base text-slate-600 max-w-2xl leading-relaxed mx-auto lg:mx-0">
+            From luxury Living Room velvet sofas and hydraulic King storage beds to iconic weather-proof CHR armchairs, multi-door wardrobes, dining sets, and ergonomic office chairs. Test true room clearance with transparent 3D wireframe bounding box AR before ordering.
+          </p>
+
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-2">
+            <button onclick="scrollToSection('categories-hub')" class="px-7 py-3.5 bg-gradient-to-r from-brand-red to-brand-darkred hover:brightness-110 text-white font-bold rounded-2xl shadow-diwali transition flex items-center justify-center gap-2 text-sm">
+              <i class="fa-solid fa-layer-group"></i> Browse All 6 Categories
+            </button>
+            
+            <button onclick="openGlobalARModal()" class="px-6 py-3.5 bg-white hover:bg-slate-50 text-slate-900 font-bold rounded-2xl border-2 border-teal-600 transition flex items-center justify-center gap-2 text-sm shadow-sm">
+              <i class="fa-solid fa-vector-square text-teal-600"></i> Open 3D Border Room AR
+            </button>
+
+            <button onclick="openSpinWheelModal()" class="px-6 py-3.5 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold rounded-2xl shadow-md transition flex items-center justify-center gap-2 text-sm">
+              <i class="fa-solid fa-dharmachakra"></i> Diwali Spin & Win
+            </button>
+          </div>
+
+          <div class="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-5 text-xs text-slate-500 font-medium">
+            <span><i class="fa-solid fa-truck-fast text-brand-red"></i> Jamnagar Doorstep Express (24-48h)</span>
+            <span><i class="fa-solid fa-screwdriver-wrench text-amber-600"></i> Free Showroom Carpenter Assembly</span>
+            <span><i class="fa-solid fa-certificate text-emerald-600"></i> 100% Genuine Nilkamal</span>
+          </div>
+        </div>
+
+        <!-- Featured Spotlight -->
+        <div class="lg:col-span-5">
+          <div class="bg-white rounded-3xl p-5 shadow-diwali border-2 border-amber-300 relative group">
+            <div class="flex justify-between items-center mb-2">
+              <span class="bg-brand-red text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Diwali Mega Combo</span>
+              <span class="text-xs font-bold text-amber-700 bg-amber-50 px-2.5 py-0.5 rounded-full border border-amber-200">Save 42%</span>
+            </div>
+
+            <div class="h-64 w-full rounded-2xl bg-amber-50/50 flex items-center justify-center relative overflow-hidden p-4">
+              <img id="spotlightProductImg" src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80" 
+                   alt="Nilkamal Alpine King Bed" class="max-h-52 object-contain drop-shadow-2xl group-hover:scale-105 transition duration-500">
+
+              <div class="absolute bottom-2 left-2 bg-slate-900/85 backdrop-blur text-white text-[10px] font-mono px-2 py-1 rounded border border-teal-400 flex items-center gap-1.5">
+                <i class="fa-solid fa-ruler-combined text-teal-400"></i> 210 × 190 × 105 cm (83" × 75" × 41")
+              </div>
+            </div>
+
+            <div class="mt-4">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3 class="text-lg font-bold text-slate-900">Nilkamal Alpine King Bed with Storage</h3>
+                  <p class="text-xs text-slate-500">Hydraulic lift with dual storage & cushioned headboard</p>
+                </div>
+                <div class="text-right">
+                  <div class="text-xs text-slate-400 line-through">₹49,900</div>
+                  <div class="text-xl font-extrabold text-brand-red">₹28,999</div>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-3 gap-2 mt-4 pt-3 border-t border-slate-100">
+                <button onclick="launch360FromProduct(201)" class="py-2 bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold rounded-xl transition flex items-center justify-center gap-1">
+                  <i class="fa-solid fa-arrows-spin text-brand-red"></i> 360° Studio
+                </button>
+                <button onclick="launchARFromProduct(201)" class="py-2 bg-teal-600 hover:bg-teal-700 text-white text-xs font-bold rounded-xl transition flex items-center justify-center gap-1">
+                  <i class="fa-solid fa-vector-square"></i> 3D Border
+                </button>
+                <button onclick="quickAddToCart(201)" class="py-2 bg-brand-red hover:bg-brand-darkred text-white text-xs font-bold rounded-xl transition flex items-center justify-center gap-1">
+                  <i class="fa-solid fa-cart-shopping"></i> Buy Now
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CATEGORIES HUB NAVIGATION ================= -->
+  <section id="categories-hub" class="py-8 bg-white border-b border-slate-100 sticky top-20 z-30 shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between gap-3 overflow-x-auto pb-2 scrollbar-none">
+        <button onclick="filterMainCategory('all')" id="catBtn-all" class="cat-pill px-4 py-2 rounded-2xl text-xs font-bold whitespace-nowrap bg-brand-red text-white shadow">
+          <i class="fa-solid fa-border-all mr-1.5"></i> All Products (24 Items)
+        </button>
+        <button onclick="filterMainCategory('Living')" id="catBtn-Living" class="cat-pill px-4 py-2 rounded-2xl text-xs font-semibold whitespace-nowrap bg-slate-100 text-slate-700 hover:bg-amber-100">
+          <i class="fa-solid fa-couch mr-1.5 text-brand-red"></i> Living Room & Sofas
+        </button>
+        <button onclick="filterMainCategory('Bedroom')" id="catBtn-Bedroom" class="cat-pill px-4 py-2 rounded-2xl text-xs font-semibold whitespace-nowrap bg-slate-100 text-slate-700 hover:bg-amber-100">
+          <i class="fa-solid fa-bed mr-1.5 text-amber-600"></i> Bedroom, Beds & Almirahs
+        </button>
+        <button onclick="filterMainCategory('Dining')" id="catBtn-Dining" class="cat-pill px-4 py-2 rounded-2xl text-xs font-semibold whitespace-nowrap bg-slate-100 text-slate-700 hover:bg-amber-100">
+          <i class="fa-solid fa-utensils mr-1.5 text-emerald-600"></i> Dining & Kitchen Sets
+        </button>
+        <button onclick="filterMainCategory('Plastic')" id="catBtn-Plastic" class="cat-pill px-4 py-2 rounded-2xl text-xs font-semibold whitespace-nowrap bg-slate-100 text-slate-700 hover:bg-amber-100">
+          <i class="fa-solid fa-chair mr-1.5 text-blue-600"></i> Nilkamal Molded & Balcony
+        </button>
+        <button onclick="filterMainCategory('Office')" id="catBtn-Office" class="cat-pill px-4 py-2 rounded-2xl text-xs font-semibold whitespace-nowrap bg-slate-100 text-slate-700 hover:bg-amber-100">
+          <i class="fa-solid fa-briefcase mr-1.5 text-indigo-600"></i> Office & Study Desks
+        </button>
+        <button onclick="filterMainCategory('Storage')" id="catBtn-Storage" class="cat-pill px-4 py-2 rounded-2xl text-xs font-semibold whitespace-nowrap bg-slate-100 text-slate-700 hover:bg-amber-100">
+          <i class="fa-solid fa-boxes-stacked mr-1.5 text-rose-600"></i> Storage Cabinets & Racks
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= COMPREHENSIVE PRODUCT CATALOGUE ================= -->
+  <section class="py-12 bg-amber-50/25">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+        <div>
+          <span class="text-xs font-bold text-brand-gold uppercase tracking-wider">Authorized Jamnagar Showroom Inventory</span>
+          <h2 id="currentCategoryHeading" class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">
+            Complete Furniture Showcase
+          </h2>
+        </div>
+        <div class="text-xs text-slate-500 font-medium">
+          Showing <span id="itemCountDisplay" class="font-bold text-brand-red">24</span> verified Nilkamal products
+        </div>
+      </div>
+
+      <!-- Main Catalogue Grid -->
+      <div id="fullProductsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <!-- Rendered via JavaScript -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= DIWALI DHAMAKA OFFERS & COUPONS BANNER ================= -->
+  <section class="py-12 bg-gradient-to-r from-brand-darkred via-slate-900 to-brand-darkred text-white relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <div class="lg:col-span-8 space-y-3">
+          <span class="inline-block px-3 py-1 bg-amber-400/20 text-amber-300 border border-amber-400/30 rounded-full text-xs font-bold uppercase tracking-wider">
+            દીપાવલી મહા ધમાકા ઓફર (Diwali Mega Dhamaka 2026)
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-black font-diwali text-yellow-300">
+            Light Up Your Entire Home With Nilkamal Jamnagar
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-300 max-w-2xl leading-relaxed">
+            Avail flat festive discounts across all bedroom sets, sofas, Freedom series almirahs, and dining tables. Win instant coupons on our Fortune Wheel!
+          </p>
+          <div class="flex flex-wrap gap-3 pt-2">
+            <div class="bg-white/10 backdrop-blur px-4 py-2.5 rounded-xl border border-white/15">
+              <span class="block text-xl font-bold font-mono text-amber-400">DIWALI500</span>
+              <span class="text-[11px] text-slate-300">Flat ₹500 off on ₹5,000+</span>
+            </div>
+            <div class="bg-white/10 backdrop-blur px-4 py-2.5 rounded-xl border border-white/15">
+              <span class="block text-xl font-bold font-mono text-amber-400">DIWALI8</span>
+              <span class="text-[11px] text-slate-300">8% Off on Sofas & Beds</span>
+            </div>
+            <div class="bg-white/10 backdrop-blur px-4 py-2.5 rounded-xl border border-white/15">
+              <span class="block text-xl font-bold font-mono text-amber-400">DIWALI20</span>
+              <span class="text-[11px] text-slate-300">20% Mega Jackpot Code</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-4 bg-white text-slate-900 p-6 rounded-3xl shadow-2xl border-2 border-amber-400 text-center">
+          <div class="text-2xl font-black text-brand-red flex items-center justify-center gap-1">
+            <span>🪔</span> Spin & Win Wheel
+          </div>
+          <p class="text-xs text-slate-600 mt-2">Test your festive luck, answer a quick Diwali question, and unlock instant checkout codes!</p>
+          <button onclick="openSpinWheelModal()" class="mt-4 w-full py-3.5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-500 text-white font-bold rounded-2xl shadow-diwali transition flex items-center justify-center gap-2 text-sm">
+            <i class="fa-solid fa-dharmachakra"></i>
+            <span>Launch Diwali Spinner</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= JAMNAGAR SHOWROOM & LOCATION ================= -->
+  <section id="contact-jamnagar" class="py-14 bg-white border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <div class="lg:col-span-6 space-y-4">
+          <div>
+            <span class="text-xs font-bold text-brand-red uppercase tracking-wider">Jamnagar Official Flagship Store</span>
+            <h2 class="text-3xl font-extrabold text-slate-900 mt-1">Visit Nilkamal Home Gallery</h2>
+            <p class="text-xs sm:text-sm text-slate-600 mt-1.5 leading-relaxed">
+              Touch, inspect, and experience 150+ ready-to-deliver models of beds, wardrobes, recliners, and chairs at our Indira Marg showroom.
+            </p>
+          </div>
+
+          <div class="space-y-2.5 text-xs">
+            <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-slate-50 border border-slate-100">
+              <i class="fa-solid fa-location-dot text-brand-red text-base mt-0.5"></i>
+              <div>
+                <strong class="text-slate-900 block font-bold">Showroom Address:</strong>
+                Nilkamal Furniture Flagship Store, Near Khambhalia Gate, Indira Marg, Jamnagar - 361001, Gujarat, India.
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-slate-50 border border-slate-100">
+              <i class="fa-solid fa-clock text-amber-600 text-base mt-0.5"></i>
+              <div>
+                <strong class="text-slate-900 block font-bold">Diwali Season Timings:</strong>
+                10:00 AM – 9:30 PM (Open 7 days during Diwali & Gujarati New Year)
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-slate-50 border border-slate-100">
+              <i class="fa-solid fa-phone text-emerald-600 text-base mt-0.5"></i>
+              <div>
+                <strong class="text-slate-900 block font-bold">Jamnagar Helpline & WhatsApp:</strong>
+                +91 98250 12345 / 0288-255XXXX (Gujarati, Hindi, English)
+              </div>
+            </div>
+          </div>
+
+          <div class="flex gap-3 pt-1">
+            <a href="https://maps.google.com/?q=Jamnagar+Gujarat+Nilkamal" target="_blank" class="px-5 py-2.5 bg-brand-red hover:bg-brand-darkred text-white text-xs font-bold rounded-xl transition flex items-center gap-1.5 shadow">
+              <i class="fa-solid fa-diamond-turn-right"></i> Get Directions
+            </a>
+            <a href="https://wa.me/919825012345?text=Hello%20Nilkamal%20Jamnagar,%20I%20am%20inquiring%20about%20Diwali%20Furniture" target="_blank" class="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl transition flex items-center gap-1.5 shadow">
+              <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp Showroom
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 h-80 rounded-3xl bg-slate-100 border border-slate-200 overflow-hidden relative flex items-center justify-center text-center p-6 shadow-inner">
+          <div class="space-y-3">
+            <div class="w-14 h-14 rounded-full bg-brand-red/10 text-brand-red flex items-center justify-center text-2xl mx-auto animate-bounce">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <h4 class="font-bold text-slate-800 text-base">Nilkamal Showroom Jamnagar</h4>
+            <p class="text-xs text-slate-500 max-w-sm">Free doorstep delivery across all Jamnagar neighborhoods.</p>
+            <div class="flex flex-wrap gap-2 justify-center text-[10px] text-slate-600">
+              <span class="bg-white border px-2.5 py-1 rounded-full">📍 Patel Colony</span>
+              <span class="bg-white border px-2.5 py-1 rounded-full">📍 Khambhalia Gate</span>
+              <span class="bg-white border px-2.5 py-1 rounded-full">📍 Digjam Circle</span>
+              <span class="bg-white border px-2.5 py-1 rounded-full">📍 Reliance Greens / Sikka</span>
+              <span class="bg-white border px-2.5 py-1 rounded-full">📍 Bedi Port Road</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-slate-950 text-slate-400 text-xs py-10 border-t-4 border-brand-red mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 bg-brand-red text-white font-black text-lg rounded-lg flex items-center justify-center">N</div>
+        <div>
+          <span class="text-white font-bold text-sm">Nilkamal Jamnagar Furniture</span>
+          <p class="text-[11px] text-slate-500">Shubh Deepavali 2026 Collection</p>
+        </div>
+      </div>
+      <p class="text-[11px]">© 2026 Nilkamal Furniture Showroom, Indira Marg, Jamnagar, Gujarat.</p>
+    </div>
+  </footer>
+
+  <!-- ================= FLOATING ACTION BUTTONS ================= -->
+  <div class="fixed bottom-6 right-6 z-40 flex flex-col gap-3">
+    <!-- Spin Wheel -->
+    <button onclick="openSpinWheelModal()" class="w-13 h-13 p-3.5 bg-gradient-to-r from-amber-500 to-amber-600 hover:scale-110 text-white rounded-full shadow-diwali transition flex items-center justify-center group relative" title="Diwali Spin & Win">
+      <i class="fa-solid fa-dharmachakra text-xl"></i>
+      <span class="absolute right-14 bg-slate-900 text-white text-[11px] font-bold px-2.5 py-1 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition shadow">
+        Diwali Spin & Win!
+      </span>
+    </button>
+
+    <!-- 3D Room AR with isolated transparent border -->
+    <button onclick="openGlobalARModal()" class="w-13 h-13 p-3.5 bg-teal-600 hover:bg-teal-700 hover:scale-110 text-white rounded-full shadow-lg transition flex items-center justify-center group relative" title="View with 3D Border & Dimensions">
+      <i class="fa-solid fa-vector-square text-xl"></i>
+      <span class="absolute right-14 bg-slate-900 text-white text-[11px] font-bold px-2.5 py-1 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition shadow">
+        3D Wireframe Room AR
+      </span>
+    </button>
+
+    <!-- Price and Math Calculator -->
+    <button onclick="openCalculatorModal()" class="w-13 h-13 p-3.5 bg-brand-red hover:bg-brand-darkred hover:scale-110 text-white rounded-full shadow-lg transition flex items-center justify-center group relative" title="Furniture & Math Calculator">
+      <i class="fa-solid fa-calculator text-xl"></i>
+      <span class="absolute right-14 bg-slate-900 text-white text-[11px] font-bold px-2.5 py-1 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition shadow">
+        Price & Math Calculator
+      </span>
+    </button>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- MODAL 1: "VIEW IN ROOM" AR WITH ISOLATED 3D BORDER & DIMENSION BOX -->
+  <!-- ========================================================================= -->
+  <div id="arCameraModal" class="fixed inset-0 z-50 bg-black hidden flex flex-col">
+    
+    <div class="p-3 sm:p-4 bg-slate-950/80 backdrop-blur text-white flex items-center justify-between z-30 border-b border-white/10">
+      <div class="flex items-center gap-2.5">
+        <span class="w-3 h-3 rounded-full bg-teal-400 animate-ping"></span>
+        <div>
+          <h3 id="arTitleText" class="text-xs sm:text-sm font-bold text-white">3D Wireframe Dimension Studio</h3>
+          <p class="text-[10px] text-teal-300 font-mono" id="arDimensionSummary">198 × 86 × 89 cm (78" × 34" × 35")</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <button onclick="toggleCameraActive()" id="toggleCamBtn" class="px-3 py-1.5 bg-white/15 hover:bg-white/25 text-white text-xs font-semibold rounded-xl backdrop-blur flex items-center gap-1.5 transition">
+          <i class="fa-solid fa-camera"></i> <span id="toggleCamLabel">Cam: ON</span>
+        </button>
+
+        <button onclick="toggleBoundingBox()" id="toggleBoxBtn" class="px-3 py-1.5 bg-teal-600 hover:bg-teal-500 text-white text-xs font-bold rounded-xl flex items-center gap-1.5 transition shadow">
+          <i class="fa-solid fa-cube"></i> <span>3D Box: ON</span>
+        </button>
+
+        <button onclick="closeARModal()" class="w-9 h-9 rounded-xl bg-red-600 hover:bg-red-700 text-white flex items-center justify-center transition">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+    </div>
+
+    <div id="arViewport" class="flex-grow relative overflow-hidden bg-slate-900 flex items-center justify-center select-none touch-none">
+      <video id="arVideo" autoplay playsinline muted class="absolute inset-0 w-full h-full object-cover"></video>
+      
+      <!-- Clean Transparent Floor Grid when Camera is OFF -->
+      <div id="arNeutralStudioFloor" class="absolute inset-0 hidden bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:24px_24px] bg-slate-950">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-900/50"></div>
+        <div class="absolute top-4 left-4 bg-white/10 backdrop-blur px-3 py-1 rounded-lg text-slate-300 text-[11px] font-mono">
+          <i class="fa-solid fa-border-none text-teal-400"></i> Pure Product Isolation Mode (No Walls/Tiles)
+        </div>
+      </div>
+
+      <!-- ISOLATED FURNITURE & 3D WIREFRAME BOUNDING BOX -->
+      <div id="arHologramContainer" class="absolute z-20 cursor-move transition-transform duration-75 flex flex-col items-center">
+        <div class="relative group" id="arBoxWrapper">
+          <img id="arIsolatedImg" src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=700&q=80" 
+               alt="Isolated Furniture" 
+               class="max-w-[260px] sm:max-w-[340px] max-h-[300px] object-contain drop-shadow-[0_20px_20px_rgba(0,0,0,0.65)] pointer-events-none select-none">
+          
+          <div id="arWireframeBox" class="bounding-box-3d absolute inset-0 rounded-lg">
+            <div class="absolute -top-7 left-1/2 -translate-x-1/2 bg-teal-500 text-slate-950 px-2 py-0.5 rounded text-[10px] font-mono font-black shadow flex items-center gap-1 whitespace-nowrap">
+              <i class="fa-solid fa-arrows-left-right"></i> <span id="arBoxLength">Length: 198 cm (78")</span>
+            </div>
+            <div class="absolute top-1/2 -right-16 -translate-y-1/2 bg-amber-400 text-slate-950 px-2 py-0.5 rounded text-[10px] font-mono font-black shadow flex items-center gap-1 whitespace-nowrap">
+              <i class="fa-solid fa-arrow-up-right-dots"></i> <span id="arBoxDepth">Depth: 86 cm (34")</span>
+            </div>
+            <div class="absolute top-1/2 -left-16 -translate-y-1/2 bg-emerald-400 text-slate-950 px-2 py-0.5 rounded text-[10px] font-mono font-black shadow flex items-center gap-1 whitespace-nowrap">
+              <i class="fa-solid fa-arrows-up-down"></i> <span id="arBoxHeight">Height: 89 cm (35")</span>
+            </div>
+
+            <div class="absolute -top-1.5 -left-1.5 w-3 h-3 bg-teal-400 rounded-full border border-white shadow"></div>
+            <div class="absolute -top-1.5 -right-1.5 w-3 h-3 bg-teal-400 rounded-full border border-white shadow"></div>
+            <div class="absolute -bottom-1.5 -left-1.5 w-3 h-3 bg-teal-400 rounded-full border border-white shadow"></div>
+            <div class="absolute -bottom-1.5 -right-1.5 w-3 h-3 bg-teal-400 rounded-full border border-white shadow"></div>
+          </div>
+
+          <div class="w-5/6 h-5 mx-auto bg-black/60 blur-md rounded-full -mt-2"></div>
+        </div>
+
+        <div class="mt-2 flex items-center gap-2 pointer-events-none">
+          <span class="bg-black/75 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full border border-teal-400/40 backdrop-blur">
+            Touch & Drag to Move
+          </span>
+        </div>
+      </div>
+
+      <canvas id="arSnapshotCanvas" class="hidden"></canvas>
+    </div>
+
+    <!-- AR Controls -->
+    <div class="p-4 bg-slate-950/95 backdrop-blur text-white flex flex-col sm:flex-row items-center justify-between gap-4 z-30 border-t border-white/10">
+      <div class="flex items-center gap-5 w-full sm:w-auto justify-center">
+        <div class="flex items-center gap-2">
+          <span class="text-xs text-teal-400 font-bold">Scale</span>
+          <input type="range" id="arScaleSlider" min="0.6" max="1.6" step="0.05" value="1" oninput="updateARHologram()" class="w-24 accent-teal-400">
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs text-amber-400 font-bold">Rotate</span>
+          <input type="range" id="arRotateSlider" min="-180" max="180" step="3" value="0" oninput="updateARHologram()" class="w-24 accent-amber-400">
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3 w-full sm:w-auto justify-center">
+        <button onclick="takeARPhoto()" class="px-5 py-2.5 bg-gradient-to-r from-teal-500 to-emerald-600 hover:brightness-110 text-white text-xs font-bold rounded-xl shadow flex items-center gap-2 transition">
+          <i class="fa-solid fa-camera"></i> Snapshot Photo
+        </button>
+        <button onclick="addCurrentARToCart()" class="px-5 py-2.5 bg-brand-red hover:bg-brand-darkred text-white text-xs font-bold rounded-xl shadow flex items-center gap-2 transition">
+          <i class="fa-solid fa-cart-shopping"></i> Add To Cart
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- MODAL 2: DIWALI "SPIN & WIN" WHEEL + FESTIVE QUIZ -->
+  <!-- ========================================================================= -->
+  <div id="spinWheelModal" class="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm hidden flex items-center justify-center p-3 sm:p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full shadow-2xl border-2 border-amber-300 overflow-hidden relative flex flex-col">
+      <div class="p-4 bg-gradient-to-r from-brand-red to-brand-darkred text-white flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <span class="text-xl diya-flame">🪔</span>
+          <div>
+            <h3 class="font-extrabold text-sm sm:text-base">Diwali Fortune Wheel</h3>
+            <p class="text-[10px] text-amber-200">Spin & Answer Quiz to Win Showroom Vouchers</p>
+          </div>
+        </div>
+        <button onclick="closeSpinWheelModal()" class="w-8 h-8 rounded-xl bg-white/20 hover:bg-white/30 text-white flex items-center justify-center">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div id="wheelStage" class="p-6 text-center flex flex-col items-center">
+        <div class="relative w-64 h-64 my-2">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-20 text-brand-red text-2xl filter drop-shadow">
+            <i class="fa-solid fa-caret-down"></i>
+          </div>
+          <canvas id="wheelCanvas" width="256" height="256" class="rounded-full shadow-xl border-4 border-amber-400"></canvas>
+        </div>
+
+        <button onclick="spinWheel()" id="spinActionBtn" class="mt-4 px-8 py-3 bg-gradient-to-r from-amber-500 via-brand-red to-amber-500 hover:brightness-110 text-white font-extrabold text-sm rounded-2xl shadow-diwali transition uppercase tracking-wider">
+          Spin The Wheel!
+        </button>
+      </div>
+
+      <div id="quizStage" class="p-6 hidden text-center space-y-4">
+        <div class="inline-block px-3 py-1 bg-amber-100 text-amber-900 rounded-full text-xs font-bold border border-amber-300">
+          🎉 Wheel Landed on: <span id="quizPrizeWon" class="text-brand-red font-black">₹500 OFF</span>
+        </div>
+        <h4 class="text-base font-extrabold text-slate-900">Answer this quick Diwali question to claim:</h4>
+        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 text-left text-xs font-medium text-slate-800" id="quizQuestionText"></div>
+        <div class="grid grid-cols-1 gap-2 text-xs" id="quizOptionsContainer"></div>
+      </div>
+
+      <div id="prizeClaimedStage" class="p-6 hidden text-center space-y-4">
+        <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-3xl mx-auto">
+          <i class="fa-solid fa-gift"></i>
+        </div>
+        <h4 class="text-xl font-black text-slate-900">Congratulations!</h4>
+        <p class="text-xs text-slate-600" id="prizeClaimedMsg">You won ₹500 OFF with code:</p>
+        
+        <div class="p-3 bg-amber-50 border-2 border-dashed border-amber-400 rounded-2xl flex items-center justify-between">
+          <span id="wonCouponCode" class="font-mono text-xl font-extrabold text-brand-red tracking-wider">DIWALI500</span>
+          <button onclick="copyAndApplyWonCode()" class="px-4 py-1.5 bg-brand-red hover:bg-brand-darkred text-white text-xs font-bold rounded-xl transition">
+            Apply Code
+          </button>
+        </div>
+
+        <button onclick="closeSpinWheelModal()" class="w-full py-3 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-xl transition">
+          Continue Shopping
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- MODAL 3: 360° THREE.JS STUDIO WITH 3D BOUNDING BOX -->
+  <!-- ========================================================================= -->
+  <div id="threeSixtyModal" class="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-md hidden flex items-center justify-center p-2 sm:p-6">
+    <div class="bg-white rounded-3xl w-full max-w-4xl h-[86vh] flex flex-col overflow-hidden shadow-2xl relative border border-amber-300">
+      
+      <div class="p-4 bg-slate-900 text-white flex items-center justify-between border-b border-slate-800">
+        <div>
+          <h3 id="threeSixtyTitle" class="text-sm sm:text-base font-bold text-white">Interactive 360° Studio</h3>
+          <p class="text-[11px] text-slate-400">Drag to rotate 360° • Procedural 3D Geometry with Wireframe Box</p>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button onclick="toggleThreeWireframe()" id="threeWireframeBtn" class="px-3 py-1.5 text-xs font-bold rounded-lg bg-teal-600 text-white hover:bg-teal-500 transition">
+            <i class="fa-solid fa-cube"></i> Wireframe Box: ON
+          </button>
+          <button onclick="toggleAutoRotate360()" id="autoRotateBtn" class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 transition">
+            <i class="fa-solid fa-play text-[10px]"></i> Auto-Spin
+          </button>
+          <button onclick="close360Modal()" class="w-9 h-9 rounded-lg bg-slate-800 hover:bg-red-600 text-white flex items-center justify-center transition">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+
+      <div id="threeCanvasContainer" class="flex-grow relative bg-slate-950 cursor-grab active:cursor-grabbing overflow-hidden">
+        <div class="absolute top-4 left-4 z-10 bg-slate-900/80 backdrop-blur text-white px-3 py-1.5 rounded-xl border border-teal-400/50 text-xs font-mono">
+          <i class="fa-solid fa-ruler-combined text-teal-400"></i> <span id="threeDimensionTag">198 × 86 × 89 cm</span>
+        </div>
+      </div>
+
+      <div class="p-3 bg-white border-t border-slate-200 flex items-center justify-between">
+        <div class="text-xs text-slate-500 hidden sm:block">
+          <i class="fa-solid fa-shield-check text-emerald-600"></i> Pure neutral studio lighting without distracting textures.
+        </div>
+        <div class="flex gap-2 w-full sm:w-auto">
+          <button id="modal360AddToCartBtn" class="flex-1 sm:flex-initial px-5 py-2.5 bg-brand-red hover:bg-brand-darkred text-white text-xs font-bold rounded-xl transition shadow flex items-center justify-center gap-1.5">
+            <i class="fa-solid fa-cart-shopping"></i> Add this Item to Cart
+          </button>
+          <button id="modal360LaunchARBtn" class="flex-1 sm:flex-initial px-5 py-2.5 bg-teal-600 hover:bg-teal-700 text-white text-xs font-bold rounded-xl transition shadow flex items-center justify-center gap-1.5">
+            <i class="fa-solid fa-vector-square"></i> Open 3D Border Room AR
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- MODAL 4: SMART CALCULATOR (FURNITURE QUOTATION + MATH PAD) -->
+  <!-- ========================================================================= -->
+  <div id="calculatorModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-3 sm:p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full shadow-2xl border border-amber-300 overflow-hidden flex flex-col">
+      <div class="p-4 bg-slate-900 text-white flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <i class="fa-solid fa-calculator text-amber-400"></i>
+          <h3 class="font-bold text-sm text-white">Jamnagar Price & Math Calculator</h3>
+        </div>
+        <button onclick="closeCalculatorModal()" class="w-8 h-8 rounded-lg bg-slate-700 hover:bg-red-600 text-white flex items-center justify-center">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="grid grid-cols-2 p-1.5 bg-slate-100 border-b border-slate-200 text-xs font-bold">
+        <button onclick="switchCalcTab('furniture')" id="calcTabBtn-furniture" class="py-2 rounded-xl bg-white text-brand-red shadow-sm transition">
+          Furniture Estimator
+        </button>
+        <button onclick="switchCalcTab('math')" id="calcTabBtn-math" class="py-2 rounded-xl text-slate-600 hover:text-slate-900 transition">
+          Standard Math Pad
+        </button>
+      </div>
+
+      <div id="calcViewFurniture" class="p-5 space-y-4 max-h-[75vh] overflow-y-auto">
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1">Select Any Furniture Item (All Categories)</label>
+          <select id="calcProductSelect" onchange="updateCalcEstimates()" class="w-full text-xs bg-slate-50 border border-slate-300 rounded-xl p-2.5 font-medium"></select>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">Quantity</label>
+            <div class="flex items-center border border-slate-300 rounded-xl overflow-hidden bg-slate-50">
+              <button onclick="adjustCalcQty(-1)" class="px-3 py-2 text-slate-600 font-bold hover:bg-slate-200">-</button>
+              <input type="number" id="calcQty" value="1" min="1" max="50" onchange="updateCalcEstimates()" class="w-full text-center text-xs bg-transparent border-none font-bold">
+              <button onclick="adjustCalcQty(1)" class="px-3 py-2 text-slate-600 font-bold hover:bg-slate-200">+</button>
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">Diwali Coupon</label>
+            <input type="text" id="calcCouponInput" value="DIWALI500" oninput="updateCalcEstimates()" class="w-full text-xs bg-slate-50 border border-slate-300 rounded-xl p-2 font-mono font-bold uppercase text-brand-red">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1">Delivery Destination</label>
+          <select id="calcDeliveryZone" onchange="updateCalcEstimates()" class="w-full text-xs bg-slate-50 border border-slate-300 rounded-xl p-2.5 font-medium">
+            <option value="0">Jamnagar City (Within 10 km) - FREE</option>
+            <option value="250">Sikka / Digvijaygram / Bedi (₹250)</option>
+            <option value="450">Lalpur / Dhrol / Reliance Greens (₹450)</option>
+            <option value="0">Indira Marg Showroom Pickup - FREE</option>
+          </select>
+        </div>
+
+        <div class="bg-slate-50 p-3.5 rounded-2xl border border-slate-200 text-xs space-y-1.5">
+          <div class="flex justify-between text-slate-600">
+            <span>Subtotal:</span>
+            <span id="calcBreakdownSubtotal">₹0</span>
+          </div>
+          <div class="flex justify-between text-emerald-600 font-semibold">
+            <span>Diwali Discount:</span>
+            <span id="calcBreakdownDiscount">- ₹0</span>
+          </div>
+          <div class="flex justify-between text-slate-600">
+            <span>Delivery:</span>
+            <span id="calcBreakdownDelivery">FREE</span>
+          </div>
+          <div class="pt-2 border-t border-slate-200 flex justify-between font-black text-base text-slate-900">
+            <span>Total Payable:</span>
+            <span id="calcBreakdownTotal" class="text-brand-red">₹0</span>
+          </div>
+        </div>
+
+        <button onclick="addCalculatedSetToCart()" class="w-full py-3 bg-brand-red hover:bg-brand-darkred text-white text-xs font-bold rounded-xl shadow transition">
+          Add Calculated Set to Cart
+        </button>
+      </div>
+
+      <div id="calcViewMath" class="p-5 hidden space-y-3">
+        <div class="bg-slate-900 text-white rounded-2xl p-4 text-right">
+          <div id="mathCalcHistory" class="text-xs text-slate-400 font-mono h-4">0</div>
+          <div id="mathCalcDisplay" class="text-3xl font-mono font-bold tracking-wider text-amber-300 mt-1">0</div>
+        </div>
+
+        <div class="grid grid-cols-4 gap-2 text-sm font-bold font-mono">
+          <button onclick="mathCalcClear()" class="p-3 rounded-xl bg-red-100 text-brand-red hover:bg-red-200">C</button>
+          <button onclick="mathCalcBackspace()" class="p-3 rounded-xl bg-slate-200 text-slate-700 hover:bg-slate-300">⌫</button>
+          <button onclick="mathCalcOp('%')" class="p-3 rounded-xl bg-slate-200 text-slate-700 hover:bg-slate-300">%</button>
+          <button onclick="mathCalcOp('/')" class="p-3 rounded-xl bg-amber-500 text-white hover:bg-amber-600">÷</button>
+
+          <button onclick="mathCalcNum('7')" class="p-3 rounded-xl bg-slate-100 hover:bg-slate-200">7</button>
+          <button onclick="mathCalcNum('8')" class="p-3 rounded-xl bg-slate-100 hover:bg-slate-200">8</button>
+          <button onclick="mathCalcNum('9')" class="p-3 rounded-xl bg-slate-100 hover:bg-slate-200">9</button>
+          <button onclick="mathCalcOp('*')" class="p-3 rounded-xl bg-amber-500 text-white hover:bg-amber-600">×</button>
+
+          <button onclick="mathCalcNum('4')" class="p-3 rounded-xl bg-slate-100 hover:bg-slate-200">4</button>
+          <button onclick="mathCalcNum('5')" class="p-3 rounded-xl bg-slate-100 hover:bg-slate-200">5</button>
+          <button onclick="mathCalcNum('6')" class="p-3 rounded-xl bg-slate-100 hover:bg-slate-200">6</button>
+          <button onclick="mathCalcOp('-')" class="p-3 rounded-xl bg-amber-500 text-white hover:bg-amber-600">−</button>
+
+          <button onclick="mathCalcNum('1')" class="p-3 rounded-xl bg-slate-100 hover:bg-slate-200">1</button>
+          <button onclick="mathCalcNum('2')" class="p-3 rounded-xl bg-slate-100 hover:bg-slate-200">2</button>
+          <button onclick="mathCalcNum('3')" class="p-3 rounded-xl bg-slate-100 hover:bg-slate-200">3</button>
+          <button onclick="mathCalcOp('+')" class="p-3 rounded-xl bg-amber-500 text-white hover:bg-amber-600">+</button>
+
+          <button onclick="mathCalcNum('0')" class="col-span-2 p-3 rounded-xl bg-slate-100 hover:bg-slate-200">0</button>
+          <button onclick="mathCalcNum('.')" class="p-3 rounded-xl bg-slate-100 hover:bg-slate-200">.</button>
+          <button onclick="mathCalcEquals()" class="p-3 rounded-xl bg-brand-red text-white hover:bg-brand-darkred">=</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- MODAL 5: PRODUCT DETAIL MODAL -->
+  <!-- ========================================================================= -->
+  <div id="productDetailModal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
+    <div class="bg-white rounded-3xl max-w-4xl w-full max-h-[92vh] overflow-y-auto shadow-2xl border border-amber-300 relative my-auto">
+      <button onclick="closeProductDetailModal()" class="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center transition">
+        <i class="fa-solid fa-xmark text-lg"></i>
+      </button>
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6 p-6 sm:p-8" id="productModalContent"></div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- DRAWER: CART DRAWER & CHECKOUT -->
+  <!-- ========================================================================= -->
+  <div id="cartDrawer" class="fixed inset-0 z-50 overflow-hidden hidden">
+    <div class="absolute inset-0 bg-black/50" onclick="toggleCartDrawer()"></div>
+    <div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
+      <div class="w-screen max-w-md bg-white shadow-2xl flex flex-col">
+        <div class="p-4 border-b border-slate-100 flex items-center justify-between bg-slate-50">
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-bag-shopping text-brand-red text-lg"></i>
+            <h3 class="font-bold text-slate-900 text-base">Diwali Shopping Cart</h3>
+            <span id="cartCountHeader" class="text-xs bg-red-100 text-brand-red font-bold px-2 py-0.5 rounded-full">0</span>
+          </div>
+          <button onclick="toggleCartDrawer()" class="w-8 h-8 rounded-lg text-slate-500 hover:bg-slate-200 flex items-center justify-center">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <div id="cartItemsContainer" class="flex-grow overflow-y-auto p-4 space-y-3"></div>
+
+        <div class="p-4 border-t border-slate-100 bg-slate-50 space-y-3">
+          <div class="flex gap-2">
+            <input type="text" id="cartCouponInput" placeholder="Enter DIWALI500" class="flex-grow text-xs uppercase font-mono font-bold bg-white border border-slate-200 rounded-xl px-3 py-2">
+            <button onclick="applyCartCoupon()" class="px-4 py-2 bg-slate-900 hover:bg-brand-red text-white text-xs font-bold rounded-xl transition">
+              Apply
+            </button>
+          </div>
+
+          <div class="space-y-1.5 text-xs text-slate-600">
+            <div class="flex justify-between">
+              <span>Subtotal:</span>
+              <span id="cartSubtotal" class="font-bold text-slate-800">₹0</span>
+            </div>
+            <div class="flex justify-between text-emerald-600 font-semibold">
+              <span>Diwali Discount:</span>
+              <span id="cartDiscount">- ₹0</span>
+            </div>
+            <div class="flex justify-between">
+              <span>Delivery across Jamnagar:</span>
+              <span class="text-emerald-700 font-bold">FREE</span>
+            </div>
+            <div class="pt-2 border-t border-slate-200 flex justify-between text-base font-black text-slate-900">
+              <span>Payable Total:</span>
+              <span id="cartGrandTotal" class="text-brand-red">₹0</span>
+            </div>
+          </div>
+
+          <button onclick="openCheckoutModal()" class="w-full py-3.5 bg-brand-red hover:bg-brand-darkred text-white font-bold rounded-2xl shadow transition flex items-center justify-center gap-2 text-sm">
+            <span>Proceed to Checkout</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHECKOUT MODAL -->
+  <div id="checkoutModal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
+    <div class="bg-white rounded-3xl max-w-2xl w-full shadow-2xl border border-amber-300 overflow-hidden my-auto max-h-[92vh] flex flex-col">
+      <div class="p-4 bg-brand-red text-white flex items-center justify-between">
+        <div>
+          <h3 class="font-bold text-base">Nilkamal Jamnagar Checkout</h3>
+          <p class="text-xs text-amber-200">Shubh Deepavali 2026 Home Express Dispatch</p>
+        </div>
+        <button onclick="closeCheckoutModal()" class="w-8 h-8 rounded-xl bg-white/20 hover:bg-white/30 text-white flex items-center justify-center">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="p-6 overflow-y-auto flex-grow space-y-4" id="checkoutFormContent">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-medium text-slate-700 mb-1">Full Name *</label>
+            <input type="text" id="chkName" placeholder="e.g. Nileshbhai Patel" class="w-full text-xs border border-slate-300 rounded-xl p-2.5">
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-slate-700 mb-1">WhatsApp Mobile *</label>
+            <input type="tel" id="chkPhone" placeholder="+91 98250 XXXXX" class="w-full text-xs border border-slate-300 rounded-xl p-2.5">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-medium text-slate-700 mb-1">Delivery Address in Jamnagar *</label>
+          <input type="text" id="chkAddress" placeholder="House/Flat No., Society Name, Landmark" class="w-full text-xs border border-slate-300 rounded-xl p-2.5">
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-medium text-slate-700 mb-1">Area / Locality</label>
+            <select id="chkLocality" class="w-full text-xs border border-slate-300 rounded-xl p-2.5">
+              <option>Patel Colony</option>
+              <option>Indira Marg</option>
+              <option>Khambhalia Gate</option>
+              <option>Digjam Circle</option>
+              <option>Sikka / Reliance Greens</option>
+              <option>Bedi Port Road</option>
+              <option>Dhrol</option>
+              <option>Lalpur</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-slate-700 mb-1">City & State</label>
+            <input type="text" value="Jamnagar, Gujarat" readonly class="w-full text-xs bg-slate-100 border border-slate-300 rounded-xl p-2.5 font-bold">
+          </div>
+        </div>
+
+        <div class="p-3 bg-slate-50 rounded-2xl border border-slate-200 text-xs flex justify-between font-bold">
+          <span>Amount Payable:</span>
+          <span id="chkTotal" class="text-brand-red text-sm">₹0</span>
+        </div>
+
+        <button onclick="submitOrder()" class="w-full py-3.5 bg-brand-red hover:bg-brand-darkred text-white text-sm font-bold rounded-2xl shadow">
+          Confirm Diwali Order
+        </button>
+      </div>
+
+      <div id="checkoutSuccessContent" class="p-8 text-center space-y-4 hidden my-auto">
+        <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-3xl mx-auto">
+          <i class="fa-solid fa-check"></i>
+        </div>
+        <h3 class="text-2xl font-black text-slate-900">Diwali Order Placed!</h3>
+        <p class="text-xs text-slate-600" id="successOrderRef">Reference ID: #DIWALI-JAM-8910</p>
+        <p class="text-xs text-slate-500">Our Indira Marg team will call you to schedule doorstep delivery and carpenter assembly.</p>
+        <button onclick="closeCheckoutModal()" class="px-6 py-2.5 bg-brand-red text-white text-xs font-bold rounded-xl">
+          Done
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- WISHLIST MODAL -->
+  <div id="wishlistModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-lg w-full max-h-[80vh] shadow-2xl flex flex-col overflow-hidden border border-slate-200">
+      <div class="p-4 border-b border-slate-100 flex items-center justify-between bg-slate-50">
+        <h3 class="font-bold text-slate-900 text-sm">Saved Diwali Favorites</h3>
+        <button onclick="toggleWishlistModal()" class="w-8 h-8 rounded-lg text-slate-500"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div id="wishlistItemsContainer" class="p-4 flex-grow overflow-y-auto space-y-3"></div>
+    </div>
+  </div>
+
+  <div id="toastContainer" class="fixed top-5 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+  <!-- ========================================================================= -->
+  <!-- JAVASCRIPT: COMPLETE PRODUCT CATALOGUE & 3D SYSTEM -->
+  <!-- ========================================================================= -->
+  <script>
+    // 24 Full Nilkamal products across all 6 core categories
+    const allProducts = [
+      // 1. LIVING ROOM CATEGORY
+      {
+        id: 101,
+        name: "Nilkamal Seville 3-Seater Velvet Sofa",
+        category: "Living",
+        subType: "3-Seater",
+        price: 18999,
+        originalPrice: 32900,
+        discount: "42% OFF",
+        rating: 4.9,
+        reviewsCount: 142,
+        bestseller: true,
+        tag: "Diwali Bestseller",
+        image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=80",
+        description: "Luxury Dutch velvet 3-seater with kiln-dried Sal wood frame, high-density 32HR foam, and ergonomic back bolster.",
+        specs: {
+          dimCm: { length: 198, depth: 86, height: 89 },
+          dimInches: { length: 78, depth: 34, height: 35 },
+          material: "Solid Sal Wood & Premium Dutch Velvet",
+          warranty: "3 Years Nilkamal Guarantee"
+        },
+        modelType: "sofa"
+      },
+      {
+        id: 102,
+        name: "Nilkamal Rippon 2-Seater Leatherette Sofa",
+        category: "Living",
+        subType: "2-Seater",
+        price: 14499,
+        originalPrice: 24900,
+        discount: "41% OFF",
+        rating: 4.8,
+        reviewsCount: 78,
+        bestseller: false,
+        tag: "Compact Living",
+        image: "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=800&q=80",
+        description: "Compact 2-seater upholstered in premium breathable leatherette with thick lumbar support cushions.",
+        specs: {
+          dimCm: { length: 142, depth: 82, height: 86 },
+          dimInches: { length: 56, depth: 32, height: 34 },
+          material: "Anti-Peel Leatherette & Solid Neem Wood",
+          warranty: "2 Years Comprehensive"
+        },
+        modelType: "sofa"
+      },
+      {
+        id: 103,
+        name: "Nilkamal Royale L-Shape Sectional Corner Sofa",
+        category: "Living",
+        subType: "Sectional",
+        price: 34999,
+        originalPrice: 58000,
+        discount: "39% OFF",
+        rating: 4.9,
+        reviewsCount: 88,
+        bestseller: true,
+        tag: "Grand Sectional",
+        image: "https://images.unsplash.com/photo-1550581190-9c1c48d21d6c?auto=format&fit=crop&w=800&q=80",
+        description: "Reversible chaise lounge corner sectional sofa with pocket spring core and soft suede upholstery.",
+        specs: {
+          dimCm: { length: 245, depth: 155, height: 88 },
+          dimInches: { length: 96, depth: 61, height: 35 },
+          material: "Suede Fabric & Solid Wood",
+          warranty: "3 Years Guarantee"
+        },
+        modelType: "sofa"
+      },
+      {
+        id: 104,
+        name: "Nilkamal Mystique Motorized Single Recliner",
+        category: "Living",
+        subType: "Recliner",
+        price: 15499,
+        originalPrice: 26000,
+        discount: "40% OFF",
+        rating: 4.9,
+        reviewsCount: 65,
+        bestseller: true,
+        tag: "Ultimate Comfort",
+        image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80",
+        description: "German mechanism 3-stage recline with push-button control, high-back headrest, and cup holder armrests.",
+        specs: {
+          dimCm: { length: 92, depth: 96, height: 102 },
+          dimInches: { length: 36, depth: 38, height: 40 },
+          material: "Air-Leatherette & Carbon Steel Mechanism",
+          warranty: "3 Years Mechanism Guarantee"
+        },
+        modelType: "chair"
+      },
+      {
+        id: 105,
+        name: "Nilkamal Hudson Solid Wood Coffee Table",
+        category: "Living",
+        subType: "Tables",
+        price: 5299,
+        originalPrice: 8900,
+        discount: "40% OFF",
+        rating: 4.7,
+        reviewsCount: 52,
+        bestseller: false,
+        tag: "Center Table",
+        image: "https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?auto=format&fit=crop&w=800&q=80",
+        description: "Solid Sheesham wood center table with frosted tempered glass top shelf and magazine rack.",
+        specs: {
+          dimCm: { length: 110, depth: 60, height: 45 },
+          dimInches: { length: 43, depth: 24, height: 18 },
+          material: "Solid Sheesham Wood & Toughened Glass",
+          warranty: "1 Year Warranty"
+        },
+        modelType: "table"
+      },
+      {
+        id: 106,
+        name: "Nilkamal Leo Entertainment TV Unit",
+        category: "Living",
+        subType: "TV Units",
+        price: 6899,
+        originalPrice: 11500,
+        discount: "40% OFF",
+        rating: 4.8,
+        reviewsCount: 71,
+        bestseller: false,
+        tag: "Living Room Storage",
+        image: "https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=800&q=80",
+        description: "Contemporary TV cabinet accommodating screens up to 65 inches with cable grommets and dual cabinets.",
+        specs: {
+          dimCm: { length: 150, depth: 40, height: 50 },
+          dimInches: { length: 59, depth: 16, height: 20 },
+          material: "Engineered Wood with Walnut Melamine Finish",
+          warranty: "1 Year Warranty"
+        },
+        modelType: "cabinet"
+      },
+
+      // 2. BEDROOM CATEGORY
+      {
+        id: 201,
+        name: "Nilkamal Alpine King Bed with Storage",
+        category: "Bedroom",
+        subType: "King Bed",
+        price: 28999,
+        originalPrice: 49900,
+        discount: "42% OFF",
+        rating: 4.9,
+        reviewsCount: 164,
+        bestseller: true,
+        tag: "Hydraulic King",
+        image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80",
+        description: "Full hydraulic storage king size bed with upholstered tufted headboard and heavy-duty gas lift struts.",
+        specs: {
+          dimCm: { length: 210, depth: 190, height: 105 },
+          dimInches: { length: 83, depth: 75, height: 41 },
+          material: "Heavy Gauge Engineered Wood & Gas Struts",
+          warranty: "3 Years Comprehensive"
+        },
+        modelType: "bed"
+      },
+      {
+        id: 202,
+        name: "Nilkamal Grace Queen Size Bed with Box Storage",
+        category: "Bedroom",
+        subType: "Queen Bed",
+        price: 19499,
+        originalPrice: 32000,
+        discount: "39% OFF",
+        rating: 4.8,
+        reviewsCount: 112,
+        bestseller: false,
+        tag: "Family Favorite",
+        image: "https://images.unsplash.com/photo-1540518614846-7ede433c4550?auto=format&fit=crop&w=800&q=80",
+        description: "Spacious Queen bed with easy-slide bottom box storage compartments and scratch-resistant walnut melamine.",
+        specs: {
+          dimCm: { length: 205, depth: 160, height: 95 },
+          dimInches: { length: 81, depth: 63, height: 37 },
+          material: "High Density Engineered Wood",
+          warranty: "2 Years Warranty"
+        },
+        modelType: "bed"
+      },
+      {
+        id: 203,
+        name: "Nilkamal Aster 4-Door Wardrobe (Almirah)",
+        category: "Bedroom",
+        subType: "Wardrobe",
+        price: 23999,
+        originalPrice: 38900,
+        discount: "38% OFF",
+        rating: 4.9,
+        reviewsCount: 190,
+        bestseller: true,
+        tag: "4-Door Almirah",
+        image: "https://images.unsplash.com/photo-1628744448840-55bdb2497bd4?auto=format&fit=crop&w=800&q=80",
+        description: "Grand 4-door wardrobe featuring center mirrors, dual hanging rails, lockable internal locker drawer, and shoe racks.",
+        specs: {
+          dimCm: { length: 160, depth: 55, height: 195 },
+          dimInches: { length: 63, depth: 22, height: 77 },
+          material: "Termite-Treated Engineered Wood & Soft-Close Hinges",
+          warranty: "3 Years Warranty"
+        },
+        modelType: "wardrobe"
+      },
+      {
+        id: 204,
+        name: "Nilkamal Flora Dressing Table with Full Mirror",
+        category: "Bedroom",
+        subType: "Dressing Table",
+        price: 7499,
+        originalPrice: 12500,
+        discount: "40% OFF",
+        rating: 4.7,
+        reviewsCount: 64,
+        bestseller: false,
+        tag: "Vanity Unit",
+        image: "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=800&q=80",
+        description: "Full-length mirror dressing station with hidden rear cosmetic shelves and sliding bangle organizer drawer.",
+        specs: {
+          dimCm: { length: 60, depth: 45, height: 185 },
+          dimInches: { length: 24, depth: 18, height: 73 },
+          material: "Engineered Wood & 5mm Distortion-Free Mirror",
+          warranty: "1 Year Warranty"
+        },
+        modelType: "wardrobe"
+      },
+      {
+        id: 205,
+        name: "Nilkamal Ortho Deluxe Memory Foam Mattress (King)",
+        category: "Bedroom",
+        subType: "Mattress",
+        price: 13999,
+        originalPrice: 22000,
+        discount: "36% OFF",
+        rating: 4.9,
+        reviewsCount: 220,
+        bestseller: true,
+        tag: "Doctor Recommended",
+        image: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=80",
+        description: "8-inch spine support orthopaedic memory foam mattress with breathable bamboo fabric cover and zero motion transfer.",
+        specs: {
+          dimCm: { length: 198, depth: 183, height: 20 },
+          dimInches: { length: 78, depth: 72, height: 8 },
+          material: "High Resilience Ortho Foam & Cool Gel Memory Foam",
+          warranty: "10 Years Manufacturer Warranty"
+        },
+        modelType: "bed"
+      },
+
+      // 3. DINING & KITCHEN CATEGORY
+      {
+        id: 301,
+        name: "Nilkamal Leonardo 6-Seater Solid Wood Dining Set",
+        category: "Dining",
+        subType: "6-Seater",
+        price: 27999,
+        originalPrice: 46000,
+        discount: "39% OFF",
+        rating: 4.9,
+        reviewsCount: 95,
+        bestseller: true,
+        tag: "6-Seater Solid Wood",
+        image: "https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=800&q=80",
+        description: "Grand dining table crafted from 100% seasoned rubberwood with 6 cushioned ergonomic high-back chairs.",
+        specs: {
+          dimCm: { length: 150, depth: 90, height: 76 },
+          dimInches: { length: 59, depth: 35, height: 30 },
+          material: "Solid Rubberwood & Stain-Resistant Cushion Fabric",
+          warranty: "3 Years Warranty"
+        },
+        modelType: "dining"
+      },
+      {
+        id: 302,
+        name: "Nilkamal Modena 4-Seater Glass Top Dining Set",
+        category: "Dining",
+        subType: "4-Seater",
+        price: 16499,
+        originalPrice: 27500,
+        discount: "40% OFF",
+        rating: 4.8,
+        reviewsCount: 82,
+        bestseller: false,
+        tag: "Compact Dining",
+        image: "https://images.unsplash.com/photo-1577140917170-285929fb55b7?auto=format&fit=crop&w=800&q=80",
+        description: "Modern 4-seater with 10mm beveled tempered glass top, powder-coated steel chassis, and faux-leather cushioned chairs.",
+        specs: {
+          dimCm: { length: 120, depth: 80, height: 75 },
+          dimInches: { length: 47, depth: 31, height: 30 },
+          material: "Toughened Glass & Heavy Duty Steel",
+          warranty: "2 Years Warranty"
+        },
+        modelType: "dining"
+      },
+      {
+        id: 303,
+        name: "Nilkamal Crystal Premium Dining Chairs (Set of 4)",
+        category: "Dining",
+        subType: "Chairs",
+        price: 6499,
+        originalPrice: 9900,
+        discount: "34% OFF",
+        rating: 4.7,
+        reviewsCount: 140,
+        bestseller: false,
+        tag: "Set of 4",
+        image: "https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=800&q=80",
+        description: "Polycarbonate high-clarity modern dining chairs that are stackable, waterproof, and tested to 150 kg.",
+        specs: {
+          dimCm: { length: 52, depth: 50, height: 85 },
+          dimInches: { length: 20, depth: 20, height: 33 },
+          material: "Virgin Polycarbonate Polymer",
+          warranty: "1 Year Warranty"
+        },
+        modelType: "chair"
+      },
+
+      // 4. ICONIC NILKAMAL MOLDED PLASTIC & OUTDOOR
+      {
+        id: 401,
+        name: "Nilkamal CHR 2060 Classic Molded Armchair (Set of 4)",
+        category: "Plastic",
+        subType: "Armchair",
+        price: 3899,
+        originalPrice: 5600,
+        discount: "30% OFF",
+        rating: 4.9,
+        reviewsCount: 890,
+        bestseller: true,
+        tag: "India's #1 Chair",
+        image: "https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=800&q=80",
+        description: "The world-famous unbreakable Nilkamal chair with armrests, weather-proof UV protection, and 150 kg test rating.",
+        specs: {
+          dimCm: { length: 58, depth: 60, height: 84 },
+          dimInches: { length: 23, depth: 24, height: 33 },
+          material: "100% Virgin Polypropylene",
+          warranty: "1 Year Replacement Guarantee"
+        },
+        modelType: "chair"
+      },
+      {
+        id: 402,
+        name: "Nilkamal CHR 2226 Premium Rattan Weave Chair",
+        category: "Plastic",
+        subType: "Rattan Chair",
+        price: 1899,
+        originalPrice: 2800,
+        discount: "32% OFF",
+        rating: 4.8,
+        reviewsCount: 310,
+        bestseller: true,
+        tag: "Rattan Aesthetic",
+        image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80",
+        description: "Cane wicker texture finish in durable polymer for gardens, living rooms, and festive balconies.",
+        specs: {
+          dimCm: { length: 59, depth: 61, height: 86 },
+          dimInches: { length: 23, depth: 24, height: 34 },
+          material: "Molded Rattan Polymer",
+          warranty: "1 Year Warranty"
+        },
+        modelType: "chair"
+      },
+      {
+        id: 403,
+        name: "Nilkamal Novella Balcony Coffee Table & 2 Chairs Set",
+        category: "Plastic",
+        subType: "Balcony Set",
+        price: 5499,
+        originalPrice: 8500,
+        discount: "35% OFF",
+        rating: 4.9,
+        reviewsCount: 175,
+        bestseller: true,
+        tag: "Balcony Special",
+        image: "https://images.unsplash.com/photo-1540574163026-643ea20ade25?auto=format&fit=crop&w=800&q=80",
+        description: "All-weather bistro coffee table with 2 high-comfort molded bucket chairs in contemporary dual tones.",
+        specs: {
+          dimCm: { length: 70, depth: 70, height: 72 },
+          dimInches: { length: 28, depth: 28, height: 28 },
+          material: "UV-Stabilized Virgin Resin",
+          warranty: "2 Years Guarantee"
+        },
+        modelType: "table"
+      },
+      {
+        id: 404,
+        name: "Nilkamal Goa 3+1+1 All-Weather Sofa Set",
+        category: "Plastic",
+        subType: "Outdoor Sofa",
+        price: 26310,
+        originalPrice: 38000,
+        discount: "31% OFF",
+        rating: 4.9,
+        reviewsCount: 210,
+        bestseller: true,
+        tag: "Unbreakable Nilkamal",
+        image: "https://images.unsplash.com/photo-1540574163026-643ea20ade25?auto=format&fit=crop&w=800&q=80",
+        description: "Nilkamal's famous weather-resistant polymer sofa with thick washable cushions. 100% rustproof and termite-proof.",
+        specs: {
+          dimCm: { length: 185, depth: 75, height: 80 },
+          dimInches: { length: 73, depth: 30, height: 31 },
+          material: "Virgin Polymer & UV-Resistant Fabric",
+          warranty: "5 Years Polymer Guarantee"
+        },
+        modelType: "sofa"
+      },
+
+      // 5. HOME OFFICE & STUDY CATEGORY
+      {
+        id: 501,
+        name: "Nilkamal Arthur High-Back Ergonomic Chair",
+        category: "Office",
+        subType: "Mesh Chair",
+        price: 6499,
+        originalPrice: 11999,
+        discount: "45% OFF",
+        rating: 4.9,
+        reviewsCount: 188,
+        bestseller: true,
+        tag: "Office Star",
+        image: "https://images.unsplash.com/photo-1580481077195-c5417855f4d8?auto=format&fit=crop&w=800&q=80",
+        description: "Korean breathable mesh with multi-point tilt locking, adjustable lumbar support, and heavy-duty nylon wheelbase.",
+        specs: {
+          dimCm: { length: 64, depth: 64, height: 125 },
+          dimInches: { length: 25, depth: 25, height: 49 },
+          material: "BIFMA-Certified Nylon & Air Mesh",
+          warranty: "2 Years Parts Warranty"
+        },
+        modelType: "officeChair"
+      },
+      {
+        id: 502,
+        name: "Nilkamal Boss Executive Leatherette Chair",
+        category: "Office",
+        subType: "Executive",
+        price: 9899,
+        originalPrice: 17500,
+        discount: "43% OFF",
+        rating: 4.8,
+        reviewsCount: 76,
+        bestseller: false,
+        tag: "Executive Comfort",
+        image: "https://images.unsplash.com/photo-1589578527966-fdac0f44566c?auto=format&fit=crop&w=800&q=80",
+        description: "High-back luxury executive chair with plush double-layer padding, synchronized reclining, and padded armrests.",
+        specs: {
+          dimCm: { length: 68, depth: 70, height: 128 },
+          dimInches: { length: 27, depth: 28, height: 50 },
+          material: "High-Grade Leatherette & Chrome Base",
+          warranty: "2 Years Comprehensive"
+        },
+        modelType: "officeChair"
+      },
+      {
+        id: 503,
+        name: "Nilkamal Leo Computer & Study Desk with Drawers",
+        category: "Office",
+        subType: "Desk",
+        price: 5299,
+        originalPrice: 9200,
+        discount: "42% OFF",
+        rating: 4.8,
+        reviewsCount: 94,
+        bestseller: true,
+        tag: "Work From Home",
+        image: "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?auto=format&fit=crop&w=800&q=80",
+        description: "Dedicated workstation desk with keyboard tray, CPU compartment, and lockable stationery drawers.",
+        specs: {
+          dimCm: { length: 120, depth: 60, height: 75 },
+          dimInches: { length: 47, depth: 24, height: 30 },
+          material: "Pre-Laminated Particle Board with PVC Edge-Banding",
+          warranty: "1 Year Warranty"
+        },
+        modelType: "table"
+      },
+      {
+        id: 504,
+        name: "Nilkamal Alex Multipurpose Bookcase & Display Rack",
+        category: "Office",
+        subType: "Bookcase",
+        price: 4699,
+        originalPrice: 7800,
+        discount: "39% OFF",
+        rating: 4.7,
+        reviewsCount: 68,
+        bestseller: false,
+        tag: "Library Storage",
+        image: "https://images.unsplash.com/photo-1594980596870-8aa52a78d8cd?auto=format&fit=crop&w=800&q=80",
+        description: "5-tier open bookshelf suitable for documents, books, and Diwali decorative artifacts.",
+        specs: {
+          dimCm: { length: 80, depth: 30, height: 175 },
+          dimInches: { length: 31, depth: 12, height: 69 },
+          material: "Engineered Wood with Walnut Foil",
+          warranty: "1 Year Warranty"
+        },
+        modelType: "cabinet"
+      },
+
+      // 6. STORAGE & UTILITY CATEGORY
+      {
+        id: 601,
+        name: "Nilkamal Freedom Big Plastic Cabinet (FMC 04)",
+        category: "Storage",
+        subType: "Freedom Cabinet",
+        price: 7999,
+        originalPrice: 12500,
+        discount: "36% OFF",
+        rating: 4.9,
+        reviewsCount: 512,
+        bestseller: true,
+        tag: "Showroom Classic",
+        image: "https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=800&q=80",
+        description: "100% Virgin polymer storage cabinet with adjustable shelves, lockable doors, and termite-proof body.",
+        specs: {
+          dimCm: { length: 71, depth: 53, height: 180 },
+          dimInches: { length: 28, depth: 21, height: 71 },
+          material: "100% Virgin Polypropylene Polymer",
+          warranty: "1 Year Replacement"
+        },
+        modelType: "cabinet"
+      },
+      {
+        id: 602,
+        name: "Nilkamal Kaira 4-Tier Ventilated Shoe Cabinet",
+        category: "Storage",
+        subType: "Shoe Rack",
+        price: 4999,
+        originalPrice: 8400,
+        discount: "40% OFF",
+        rating: 4.8,
+        reviewsCount: 165,
+        bestseller: false,
+        tag: "Louvered Doors",
+        image: "https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=800&q=80",
+        description: "Accommodates 16+ pairs of footwear with air circulation louvered slats and top drawer for keys and polish.",
+        specs: {
+          dimCm: { length: 75, depth: 36, height: 95 },
+          dimInches: { length: 30, depth: 14, height: 37 },
+          material: "Engineered Wood with Walnut Melamine",
+          warranty: "1 Year Warranty"
+        },
+        modelType: "cabinet"
+      },
+      {
+        id: 603,
+        name: "Nilkamal Zoe Metal Folding Bed with Foam Mattress",
+        category: "Storage",
+        subType: "Folding Bed",
+        price: 5899,
+        originalPrice: 9500,
+        discount: "38% OFF",
+        rating: 4.9,
+        reviewsCount: 230,
+        bestseller: true,
+        tag: "Guest Essential",
+        image: "https://images.unsplash.com/photo-1540518614846-7ede433c4550?auto=format&fit=crop&w=800&q=80",
+        description: "Portable rollaway single folding bed on 360-degree castor wheels with built-in high-density mattress.",
+        specs: {
+          dimCm: { length: 190, depth: 90, height: 40 },
+          dimInches: { length: 75, depth: 35, height: 16 },
+          material: "Powder Coated Carbon Steel & Foam Mattress",
+          warranty: "1 Year Warranty"
+        },
+        modelType: "bed"
+      }
+    ];
+
+    let cart = [];
+    let wishlist = [];
+    let currentMainCategory = 'all';
+    let currentActiveProduct = allProducts[0];
+    let appliedCoupon = null;
+
+    // AR State
+    let arStream = null;
+    let arScale = 1;
+    let arRotation = 0;
+    let isDraggingAR = false;
+    let arDragStartX = 0;
+    let arDragStartY = 0;
+    let arHoloPosX = 0;
+    let arHoloPosY = 0;
+    let isCameraActive = true;
+    let isBoundingBoxVisible = true;
+
+    // Three.js State
+    let threeScene, threeCamera, threeRenderer, threeFurnitureMesh, threeWireframeBoxMesh;
+    let isAutoRotating360 = true;
+    let isPointerDown360 = false;
+    let pointerStartX360 = 0;
+    let pointerStartY360 = 0;
+    let isWireframeActive = true;
+
+    // Spin Wheel State
+    let wheelCanvas, wheelCtx;
+    let wheelAngle = 0;
+    let isSpinning = false;
+    const wheelSegments = [
+      { label: "₹500 OFF", code: "DIWALI500", color: "#C8102E" },
+      { label: "8% OFF", code: "DIWALI8", color: "#D97706" },
+      { label: "20% OFF", code: "DIWALI20", color: "#0F172A" },
+      { label: "Free Chair", code: "FREECHAIR", color: "#0D9488" },
+      { label: "₹500 OFF", code: "DIWALI500", color: "#C8102E" },
+      { label: "8% OFF", code: "DIWALI8", color: "#D97706" }
+    ];
+    let selectedPrize = wheelSegments[0];
+
+    const diwaliQuizBank = [
+      {
+        question: "Which sacred festival of lights is marked by lighting Diyas and welcoming prosperity with Goddess Lakshmi?",
+        options: ["Diwali (Deepavali)", "Holi", "Makar Sankranti", "Raksha Bandhan"],
+        correct: 0
+      },
+      {
+        question: "What is Nilkamal world-famous for in homes across Gujarat?",
+        options: ["Unbreakable Quality Furniture", "Soft Drinks", "Smartphones", "Cement"],
+        correct: 0
+      },
+      {
+        question: "In which city is this flagship Nilkamal Showroom located?",
+        options: ["Jamnagar, Gujarat", "Bhopal", "Patna", "Chennai"],
+        correct: 0
+      }
+    ];
+
+    // ================= RENDER CATALOGUE =================
+    function renderProducts(items = allProducts) {
+      const container = document.getElementById('fullProductsGrid');
+      const countDisplay = document.getElementById('itemCountDisplay');
+      if (!container) return;
+
+      countDisplay.innerText = items.length;
+
+      container.innerHTML = items.map(p => `
+        <div class="bg-white rounded-3xl p-4 sm:p-5 border-2 border-amber-200/70 hover:border-amber-400 shadow-sm hover:shadow-diwali transition flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full bg-red-50 text-brand-red border border-red-200">
+                ${p.tag}
+              </span>
+              <button onclick="toggleWishlist(${p.id}, event)" class="text-slate-400 hover:text-brand-red text-base transition">
+                <i class="${wishlist.includes(p.id) ? 'fa-solid fa-heart text-brand-red' : 'fa-regular fa-heart'}"></i>
+              </button>
+            </div>
+
+            <!-- Product Visual -->
+            <div class="relative h-48 rounded-2xl bg-amber-50/40 p-3 flex items-center justify-center overflow-hidden cursor-pointer" onclick="openProductDetailModal(${p.id})">
+              <img src="${p.image}" alt="${p.name}" class="max-h-40 object-contain group-hover:scale-105 transition duration-300 drop-shadow-md">
+
+              <!-- Real 3D Dimension Indicator -->
+              <div class="absolute bottom-2 left-2 right-2 bg-slate-950/85 backdrop-blur rounded-lg px-2 py-1 text-white text-[10px] font-mono flex items-center justify-between border border-teal-400/40">
+                <span><i class="fa-solid fa-ruler-combined text-teal-400"></i> ${p.specs.dimCm.length}×${p.specs.dimCm.depth}×${p.specs.dimCm.height} cm</span>
+                <span class="text-amber-300">(${p.specs.dimInches.length}"×${p.specs.dimInches.depth}"×${p.specs.dimInches.height}")</span>
+              </div>
+            </div>
+
+            <div class="mt-4">
+              <div class="flex items-center gap-1 text-[11px] text-amber-500 font-bold">
+                <i class="fa-solid fa-star"></i> <span>${p.rating}</span>
+                <span class="text-slate-400 font-normal">(${p.reviewsCount} reviews)</span>
+              </div>
+              <h3 onclick="openProductDetailModal(${p.id})" class="font-extrabold text-sm sm:text-base text-slate-900 group-hover:text-brand-red transition line-clamp-1 mt-1 cursor-pointer">
+                ${p.name}
+              </h3>
+              <p class="text-xs text-slate-500 mt-1 line-clamp-1">${p.specs.material}</p>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-slate-100">
+            <div class="flex items-baseline justify-between mb-3">
+              <div>
+                <span class="text-xs text-slate-400 line-through">₹${p.originalPrice.toLocaleString('en-IN')}</span>
+                <span class="text-lg font-black text-brand-red block">₹${p.price.toLocaleString('en-IN')}</span>
+              </div>
+              <span class="text-[11px] text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded">${p.discount}</span>
+            </div>
+
+            <!-- Quick Action Row -->
+            <div class="grid grid-cols-3 gap-1.5">
+              <button onclick="launch360FromProduct(${p.id}, event)" class="py-2 bg-slate-100 hover:bg-slate-200 text-slate-800 text-[11px] font-bold rounded-xl transition flex items-center justify-center gap-1" title="360° Studio">
+                <i class="fa-solid fa-arrows-spin text-brand-red"></i> 360°
+              </button>
+              <button onclick="launchARFromProduct(${p.id}, event)" class="py-2 bg-teal-600 hover:bg-teal-700 text-white text-[11px] font-bold rounded-xl transition flex items-center justify-center gap-1 shadow" title="3D Wireframe Room AR">
+                <i class="fa-solid fa-vector-square"></i> 3D Box
+              </button>
+              <button onclick="quickAddToCart(${p.id})" class="py-2 bg-brand-red hover:bg-brand-darkred text-white text-[11px] font-bold rounded-xl transition flex items-center justify-center gap-1 shadow" title="Add to Cart">
+                <i class="fa-solid fa-cart-shopping"></i> Buy
+              </button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function filterMainCategory(cat) {
+      currentMainCategory = cat;
+      document.querySelectorAll('.cat-pill').forEach(b => {
+        b.className = 'cat-pill px-4 py-2 rounded-2xl text-xs font-semibold whitespace-nowrap bg-slate-100 text-slate-700 hover:bg-amber-100';
+      });
+
+      const activeBtn = document.getElementById(`catBtn-${cat}`);
+      if (activeBtn) {
+        activeBtn.className = 'cat-pill px-4 py-2 rounded-2xl text-xs font-bold whitespace-nowrap bg-brand-red text-white shadow';
+      }
+
+      const heading = document.getElementById('currentCategoryHeading');
+      if (cat === 'all') {
+        heading.innerText = "Complete Nilkamal Showroom Showcase (All 6 Categories)";
+        renderProducts(allProducts);
+      } else {
+        const catMap = {
+          Living: "Living Room: 1/2/3 Seater Sofas, Recliners, Coffee Tables & TV Units",
+          Bedroom: "Bedroom: King & Queen Beds, 4-Door Almirahs, Dressing Tables & Mattresses",
+          Dining: "Dining & Kitchen: 4/6 Seater Solid Wood & Glass Dining Sets",
+          Plastic: "Nilkamal Molded Polymer: Classic CHR Armchairs, Balcony & Outdoor Sets",
+          Office: "Home Office: Ergonomic Mesh Chairs, Executive Chairs & Study Desks",
+          Storage: "Storage & Utility: Freedom Cabinets, Shoe Racks & Folding Beds"
+        };
+        heading.innerText = catMap[cat] || `${cat} Furniture Collection`;
+        renderProducts(allProducts.filter(p => p.category === cat));
+      }
+    }
+
+    function scrollToCategorySection(cat) {
+      filterMainCategory(cat);
+      scrollToSection('categories-hub');
+    }
+
+    function handleSearch(q) {
+      q = q.toLowerCase().trim();
+      const filtered = allProducts.filter(p => 
+        p.name.toLowerCase().includes(q) || 
+        p.category.toLowerCase().includes(q) || 
+        p.specs.material.toLowerCase().includes(q)
+      );
+      renderProducts(filtered);
+    }
+
+    // ================= DETAIL MODAL =================
+    function openProductDetailModal(id) {
+      const p = allProducts.find(x => x.id === id) || allProducts[0];
+      currentActiveProduct = p;
+
+      const container = document.getElementById('productModalContent');
+      container.innerHTML = `
+        <div class="md:col-span-6 space-y-3">
+          <div class="h-72 w-full rounded-2xl bg-amber-50/40 p-4 flex items-center justify-center border border-amber-200">
+            <img src="${p.image}" class="max-h-64 object-contain drop-shadow-xl">
+          </div>
+          <div class="grid grid-cols-2 gap-2">
+            <button onclick="closeProductDetailModal(); launch360FromProduct(${p.id})" class="py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold rounded-xl flex items-center justify-center gap-1.5">
+              <i class="fa-solid fa-arrows-spin text-brand-red"></i> 360° Studio
+            </button>
+            <button onclick="closeProductDetailModal(); launchARFromProduct(${p.id})" class="py-2.5 bg-teal-600 hover:bg-teal-700 text-white text-xs font-bold rounded-xl flex items-center justify-center gap-1.5 shadow">
+              <i class="fa-solid fa-vector-square"></i> 3D Border Room AR
+            </button>
+          </div>
+        </div>
+
+        <div class="md:col-span-6 flex flex-col justify-between space-y-4">
+          <div>
+            <span class="text-xs font-bold text-brand-red uppercase tracking-wider">${p.category} Collection • Diwali 2026</span>
+            <h2 class="text-2xl font-black text-slate-900 mt-1">${p.name}</h2>
+            
+            <div class="flex items-baseline gap-2 mt-2">
+              <span class="text-2xl font-black text-brand-red">₹${p.price.toLocaleString('en-IN')}</span>
+              <span class="text-xs text-slate-400 line-through">₹${p.originalPrice.toLocaleString('en-IN')}</span>
+              <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">${p.discount}</span>
+            </div>
+
+            <p class="text-xs text-slate-600 mt-3 leading-relaxed">${p.description}</p>
+
+            <div class="mt-4 bg-slate-50 p-3.5 rounded-2xl border border-slate-200 text-xs space-y-2 font-mono">
+              <div class="flex justify-between">
+                <span class="text-slate-500 font-sans">Dimensions (Metric):</span>
+                <span class="font-bold text-slate-900">${p.specs.dimCm.length} cm (L) × ${p.specs.dimCm.depth} cm (D) × ${p.specs.dimCm.height} cm (H)</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-slate-500 font-sans">Dimensions (Inches):</span>
+                <span class="font-bold text-amber-700">${p.specs.dimInches.length}" (L) × ${p.specs.dimInches.depth}" (D) × ${p.specs.dimInches.height}" (H)</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-slate-500 font-sans">Material:</span>
+                <span class="font-bold text-slate-900 font-sans">${p.specs.material}</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-slate-500 font-sans">Warranty:</span>
+                <span class="font-bold text-brand-red font-sans">${p.specs.warranty}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-100 flex gap-2">
+            <button onclick="addToCart(${p.id}, 1); closeProductDetailModal();" class="flex-1 py-3 bg-slate-900 hover:bg-brand-red text-white text-xs font-bold rounded-xl transition">
+              Add to Cart
+            </button>
+            <button onclick="addToCart(${p.id}, 1); closeProductDetailModal(); openCheckoutModal();" class="flex-1 py-3 bg-brand-red hover:bg-brand-darkred text-white text-xs font-bold rounded-xl transition shadow">
+              Buy Now
+            </button>
+          </div>
+        </div>
+      `;
+
+      document.getElementById('productDetailModal').classList.remove('hidden');
+    }
+
+    function closeProductDetailModal() {
+      document.getElementById('productDetailModal').classList.add('hidden');
+    }
+
+    // ================= 3D ROOM AR (TRANSPARENT ISOLATED WIREFRAME) =================
+    async function openGlobalARModal() {
+      launchARFromProduct(currentActiveProduct ? currentActiveProduct.id : 101);
+    }
+
+    async function launchARFromProduct(id, e) {
+      if (e) e.stopPropagation();
+      const p = allProducts.find(x => x.id === id) || allProducts[0];
+      currentActiveProduct = p;
+
+      document.getElementById('arTitleText').innerText = `${p.name} • 3D Bounding Box`;
+      document.getElementById('arDimensionSummary').innerText = `${p.specs.dimCm.length} × ${p.specs.dimCm.depth} × ${p.specs.dimCm.height} cm (${p.specs.dimInches.length}" × ${p.specs.dimInches.depth}" × ${p.specs.dimInches.height}")`;
+
+      document.getElementById('arBoxLength').innerText = `Length: ${p.specs.dimCm.length} cm (${p.specs.dimInches.length}")`;
+      document.getElementById('arBoxDepth').innerText = `Depth: ${p.specs.dimCm.depth} cm (${p.specs.dimInches.depth}")`;
+      document.getElementById('arBoxHeight').innerText = `Height: ${p.specs.dimCm.height} cm (${p.specs.dimInches.height}")`;
+
+      document.getElementById('arIsolatedImg').src = p.image;
+      document.getElementById('arCameraModal').classList.remove('hidden');
+
+      arHoloPosX = 0;
+      arHoloPosY = 0;
+      arScale = 1;
+      arRotation = 0;
+      document.getElementById('arScaleSlider').value = 1;
+      document.getElementById('arRotateSlider').value = 0;
+      updateARHologram();
+
+      if (isCameraActive) {
+        await startARCamera();
+      }
+      setupARDragging();
+    }
+
+    async function startARCamera() {
+      const video = document.getElementById('arVideo');
+      const neutralFloor = document.getElementById('arNeutralStudioFloor');
+      
+      try {
+        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+          if (arStream) arStream.getTracks().forEach(t => t.stop());
+          arStream = await navigator.mediaDevices.getUserMedia({
+            video: { facingMode: { ideal: 'environment' } },
+            audio: false
+          });
+          video.srcObject = arStream;
+          video.classList.remove('hidden');
+          neutralFloor.classList.add('hidden');
+          document.getElementById('toggleCamLabel').innerText = 'Cam: ON';
+        } else {
+          throw new Error('No camera');
+        }
+      } catch (err) {
+        toggleCameraActive(false);
+      }
+    }
+
+    function toggleCameraActive(forceState) {
+      if (typeof forceState === 'boolean') {
+        isCameraActive = forceState;
+      } else {
+        isCameraActive = !isCameraActive;
+      }
+
+      const video = document.getElementById('arVideo');
+      const neutralFloor = document.getElementById('arNeutralStudioFloor');
+      const label = document.getElementById('toggleCamLabel');
+
+      if (isCameraActive) {
+        startARCamera();
+      } else {
+        if (arStream) {
+          arStream.getTracks().forEach(t => t.stop());
+          arStream = null;
+        }
+        video.classList.add('hidden');
+        neutralFloor.classList.remove('hidden');
+        label.innerText = 'Cam: OFF (Isolated)';
+        showToast('Pure Product Isolation Mode (No Walls/Tiles) Active');
+      }
+    }
+
+    function toggleBoundingBox() {
+      isBoundingBoxVisible = !isBoundingBoxVisible;
+      const box = document.getElementById('arWireframeBox');
+      const btn = document.getElementById('toggleBoxBtn');
+
+      if (isBoundingBoxVisible) {
+        box.classList.remove('hidden');
+        btn.innerHTML = '<i class="fa-solid fa-cube"></i> <span>3D Box: ON</span>';
+        btn.className = 'px-3 py-1.5 bg-teal-600 hover:bg-teal-500 text-white text-xs font-bold rounded-xl flex items-center gap-1.5 transition shadow';
+      } else {
+        box.classList.add('hidden');
+        btn.innerHTML = '<i class="fa-regular fa-square"></i> <span>3D Box: OFF</span>';
+        btn.className = 'px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-bold rounded-xl flex items-center gap-1.5 transition';
+      }
+    }
+
+    function setupARDragging() {
+      const holo = document.getElementById('arHologramContainer');
+
+      function onPointerStart(e) {
+        isDraggingAR = true;
+        arDragStartX = e.clientX || (e.touches && e.touches[0].clientX);
+        arDragStartY = e.clientY || (e.touches && e.touches[0].clientY);
+      }
+
+      function onPointerMove(e) {
+        if (!isDraggingAR) return;
+        const curX = e.clientX || (e.touches && e.touches[0].clientX);
+        const curY = e.clientY || (e.touches && e.touches[0].clientY);
+
+        arHoloPosX += (curX - arDragStartX);
+        arHoloPosY += (curY - arDragStartY);
+
+        arDragStartX = curX;
+        arDragStartY = curY;
+        updateARHologram();
+      }
+
+      function onPointerEnd() {
+        isDraggingAR = false;
+      }
+
+      holo.onmousedown = onPointerStart;
+      holo.ontouchstart = onPointerStart;
+
+      window.onmousemove = onPointerMove;
+      window.ontouchmove = onPointerMove;
+
+      window.onmouseup = onPointerEnd;
+      window.ontouchend = onPointerEnd;
+    }
+
+    function updateARHologram() {
+      const holo = document.getElementById('arHologramContainer');
+      const scaleSlider = document.getElementById('arScaleSlider');
+      const rotateSlider = document.getElementById('arRotateSlider');
+
+      arScale = parseFloat(scaleSlider.value);
+      arRotation = parseInt(rotateSlider.value);
+
+      holo.style.transform = `translate(${arHoloPosX}px, ${arHoloPosY}px) scale(${arScale}) rotate(${arRotation}deg)`;
+    }
+
+    function takeARPhoto() {
+      const video = document.getElementById('arVideo');
+      const canvas = document.getElementById('arSnapshotCanvas');
+      const holoImg = document.getElementById('arIsolatedImg');
+      const ctx = canvas.getContext('2d');
+
+      const width = video.videoWidth || 800;
+      const height = video.videoHeight || 600;
+
+      canvas.width = width;
+      canvas.height = height;
+
+      if (isCameraActive && !video.classList.contains('hidden')) {
+        ctx.drawImage(video, 0, 0, width, height);
+      } else {
+        ctx.fillStyle = "#0f172a";
+        ctx.fillRect(0, 0, width, height);
+      }
+
+      const holoWidth = 320 * arScale;
+      const holoHeight = 240 * arScale;
+      const posX = (width / 2) - (holoWidth / 2) + arHoloPosX;
+      const posY = (height / 2) - (holoHeight / 2) + arHoloPosY;
+
+      ctx.save();
+      ctx.translate(posX + holoWidth / 2, posY + holoHeight / 2);
+      ctx.rotate((arRotation * Math.PI) / 180);
+      try {
+        ctx.drawImage(holoImg, -holoWidth / 2, -holoHeight / 2, holoWidth, holoHeight);
+      } catch (e) {}
+      ctx.restore();
+
+      ctx.fillStyle = "rgba(0, 0, 0, 0.75)";
+      ctx.fillRect(10, height - 42, 420, 32);
+      ctx.fillStyle = "#f59e0b";
+      ctx.font = "bold 13px Inter";
+      ctx.fillText(`Nilkamal Jamnagar • ${currentActiveProduct.name}`, 20, height - 21);
+
+      try {
+        const url = canvas.toDataURL("image/png");
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `Nilkamal_Diwali_Dimension_${Date.now()}.png`;
+        a.click();
+        showToast('Snapshot saved with 3D dimensions! 📸');
+      } catch (err) {
+        showToast('Photo captured! Take screenshot to save.');
+      }
+    }
+
+    function addCurrentARToCart() {
+      if (currentActiveProduct) {
+        addToCart(currentActiveProduct.id, 1);
+        closeARModal();
+        toggleCartDrawer();
+      }
+    }
+
+    function closeARModal() {
+      if (arStream) {
+        arStream.getTracks().forEach(t => t.stop());
+        arStream = null;
+      }
+      document.getElementById('arCameraModal').classList.add('hidden');
+    }
+
+    // ================= 360 THREE.JS PROCEDURAL STUDIO =================
+    function initThreeSixtyViewer() {
+      const container = document.getElementById('threeCanvasContainer');
+      if (!container) return;
+
+      const existingCanvas = container.querySelector('canvas');
+      if (existingCanvas) existingCanvas.remove();
+
+      const width = container.clientWidth || 600;
+      const height = container.clientHeight || 450;
+
+      threeScene = new THREE.Scene();
+      threeScene.background = new THREE.Color(0x0a0f1d);
+
+      threeCamera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
+      threeCamera.position.set(0, 1.4, 3.4);
+
+      threeRenderer = new THREE.WebGLRenderer({ antialias: true });
+      threeRenderer.setSize(width, height);
+      threeRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      container.appendChild(threeRenderer.domElement);
+
+      const ambLight = new THREE.AmbientLight(0xffedd5, 0.95);
+      threeScene.add(ambLight);
+
+      const dirLight = new THREE.DirectionalLight(0xffffff, 0.85);
+      dirLight.position.set(5, 8, 6);
+      threeScene.add(dirLight);
+
+      buildProcedural3DGeometry(currentActiveProduct);
+
+      const dom = threeRenderer.domElement;
+      dom.addEventListener('pointerdown', (e) => {
+        isPointerDown360 = true;
+        pointerStartX360 = e.clientX;
+        pointerStartY360 = e.clientY;
+      });
+
+      window.addEventListener('pointermove', (e) => {
+        if (!isPointerDown360 || !threeFurnitureMesh) return;
+        const dx = e.clientX - pointerStartX360;
+        const dy = e.clientY - pointerStartY360;
+
+        threeFurnitureMesh.rotation.y += dx * 0.01;
+        threeFurnitureMesh.rotation.x += dy * 0.005;
+        threeFurnitureMesh.rotation.x = Math.max(-0.35, Math.min(0.55, threeFurnitureMesh.rotation.x));
+
+        pointerStartX360 = e.clientX;
+        pointerStartY360 = e.clientY;
+      });
+
+      window.addEventListener('pointerup', () => {
+        isPointerDown360 = false;
+      });
+
+      animateThree();
+    }
+
+    // Builds accurate 3D geometries for all types (Beds, Wardrobes, Sofas, Chairs, Tables, Cabinets)
+    function buildProcedural3DGeometry(product) {
+      const group = new THREE.Group();
+      const type = product.modelType || 'sofa';
+
+      const redMat = new THREE.MeshStandardMaterial({ color: 0xc8102e, roughness: 0.5 });
+      const woodMat = new THREE.MeshStandardMaterial({ color: 0x854d0e, roughness: 0.4 });
+      const metalMat = new THREE.MeshStandardMaterial({ color: 0x334155, metalness: 0.8, roughness: 0.2 });
+      const whiteMat = new THREE.MeshStandardMaterial({ color: 0xf8fafc, roughness: 0.3 });
+
+      let boxW = 2.2, boxH = 1.2, boxD = 1.1;
+
+      if (type === 'bed') {
+        // Bed base & mattress
+        const base = new THREE.Mesh(new THREE.BoxGeometry(2.0, 0.3, 1.8), woodMat);
+        const mat = new THREE.Mesh(new THREE.BoxGeometry(1.9, 0.25, 1.7), whiteMat);
+        mat.position.y = 0.25;
+        const headboard = new THREE.Mesh(new THREE.BoxGeometry(2.0, 1.0, 0.2), redMat);
+        headboard.position.set(0, 0.5, -0.85);
+        group.add(base, mat, headboard);
+        boxW = 2.2; boxH = 1.1; boxD = 2.0;
+      } 
+      else if (type === 'wardrobe') {
+        // Multi-door wardrobe almirah
+        const body = new THREE.Mesh(new THREE.BoxGeometry(1.6, 2.0, 0.7), woodMat);
+        const mirror = new THREE.Mesh(new THREE.BoxGeometry(0.5, 1.4, 0.02), new THREE.MeshStandardMaterial({ color: 0xe2e8f0, metalness: 0.95 }));
+        mirror.position.set(0, 0.1, 0.36);
+        group.add(body, mirror);
+        boxW = 1.8; boxH = 2.2; boxD = 0.9;
+      } 
+      else if (type === 'dining' || type === 'table') {
+        // Table top & legs
+        const top = new THREE.Mesh(new THREE.BoxGeometry(1.8, 0.1, 1.0), woodMat);
+        top.position.y = 0.35;
+        group.add(top);
+        [[-0.8, -0.4], [0.8, -0.4], [-0.8, 0.4], [0.8, 0.4]].forEach(([x, z]) => {
+          const leg = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.04, 0.7, 8), metalMat);
+          leg.position.set(x, 0, z);
+          group.add(leg);
+        });
+        boxW = 2.0; boxH = 0.9; boxD = 1.2;
+      } 
+      else if (type === 'officeChair' || type === 'chair') {
+        // Molded/Office chair
+        const seat = new THREE.Mesh(new THREE.BoxGeometry(0.7, 0.1, 0.7), redMat);
+        const back = new THREE.Mesh(new THREE.BoxGeometry(0.7, 0.8, 0.1), redMat);
+        back.position.set(0, 0.4, -0.3);
+        const stem = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.04, 0.5, 8), metalMat);
+        stem.position.y = -0.3;
+        group.add(seat, back, stem);
+        boxW = 0.9; boxH = 1.4; boxD = 0.9;
+      } 
+      else if (type === 'cabinet') {
+        // Storage Freedom cabinet
+        const body = new THREE.Mesh(new THREE.BoxGeometry(1.0, 1.8, 0.6), woodMat);
+        group.add(body);
+        boxW = 1.2; boxH = 2.0; boxD = 0.8;
+      } 
+      else {
+        // Default Sofa
+        const seat = new THREE.Mesh(new THREE.BoxGeometry(2.0, 0.35, 0.9), redMat);
+        const back = new THREE.Mesh(new THREE.BoxGeometry(2.0, 0.65, 0.3), redMat);
+        back.position.set(0, 0.45, -0.3);
+        const armL = new THREE.Mesh(new THREE.BoxGeometry(0.25, 0.5, 0.9), redMat);
+        armL.position.set(-0.98, 0.25, 0);
+        const armR = new THREE.Mesh(new THREE.BoxGeometry(0.25, 0.5, 0.9), redMat);
+        armR.position.set(0.98, 0.25, 0);
+        group.add(seat, back, armL, armR);
+        boxW = 2.3; boxH = 1.2; boxD = 1.15;
+      }
+
+      // Procedural 3D Wireframe Bounding Box
+      const wireGeo = new THREE.WireframeGeometry(new THREE.BoxGeometry(boxW, boxH, boxD));
+      const wireMat = new THREE.LineBasicMaterial({ color: 0x0d9488, linewidth: 2 });
+      threeWireframeBoxMesh = new THREE.LineSegments(wireGeo, wireMat);
+      threeWireframeBoxMesh.position.y = 0.15;
+      group.add(threeWireframeBoxMesh);
+
+      threeFurnitureMesh = group;
+      threeScene.add(threeFurnitureMesh);
+    }
+
+    function toggleThreeWireframe() {
+      isWireframeActive = !isWireframeActive;
+      if (threeWireframeBoxMesh) {
+        threeWireframeBoxMesh.visible = isWireframeActive;
+      }
+      const btn = document.getElementById('threeWireframeBtn');
+      btn.innerHTML = isWireframeActive ? 
+        '<i class="fa-solid fa-cube"></i> Wireframe Box: ON' : 
+        '<i class="fa-regular fa-square"></i> Wireframe Box: OFF';
+    }
+
+    function toggleAutoRotate360() {
+      isAutoRotating360 = !isAutoRotating360;
+      document.getElementById('autoRotateBtn').innerHTML = isAutoRotating360 ? 
+        '<i class="fa-solid fa-pause text-[10px]"></i> Pause' : 
+        '<i class="fa-solid fa-play text-[10px]"></i> Auto-Spin';
+    }
+
+    function animateThree() {
+      requestAnimationFrame(animateThree);
+      if (threeFurnitureMesh && isAutoRotating360 && !isPointerDown360) {
+        threeFurnitureMesh.rotation.y += 0.007;
+      }
+      if (threeRenderer && threeScene && threeCamera) {
+        threeRenderer.render(threeScene, threeCamera);
+      }
+    }
+
+    function openGlobal360Modal() {
+      launch360FromProduct(currentActiveProduct ? currentActiveProduct.id : 101);
+    }
+
+    function launch360FromProduct(id, e) {
+      if (e) e.stopPropagation();
+      const p = allProducts.find(x => x.id === id) || allProducts[0];
+      currentActiveProduct = p;
+
+      document.getElementById('threeSixtyTitle').innerText = `${p.name} (360° Studio)`;
+      document.getElementById('threeDimensionTag').innerText = `${p.specs.dimCm.length} × ${p.specs.dimCm.depth} × ${p.specs.dimCm.height} cm`;
+
+      document.getElementById('modal360AddToCartBtn').onclick = () => {
+        addToCart(p.id, 1);
+        close360Modal();
+      };
+
+      document.getElementById('modal360LaunchARBtn').onclick = () => {
+        close360Modal();
+        launchARFromProduct(p.id);
+      };
+
+      document.getElementById('threeSixtyModal').classList.remove('hidden');
+
+      setTimeout(() => {
+        initThreeSixtyViewer();
+      }, 70);
+    }
+
+    function close360Modal() {
+      document.getElementById('threeSixtyModal').classList.add('hidden');
+    }
+
+    // ================= DIWALI "SPIN & WIN" =================
+    function initWheelCanvas() {
+      wheelCanvas = document.getElementById('wheelCanvas');
+      if (!wheelCanvas) return;
+      wheelCtx = wheelCanvas.getContext('2d');
+      drawWheel();
+    }
+
+    function drawWheel() {
+      const numSegments = wheelSegments.length;
+      const arc = (2 * Math.PI) / numSegments;
+      const radius = 124;
+      const centerX = 128;
+      const centerY = 128;
+
+      wheelCtx.clearRect(0, 0, 256, 256);
+
+      wheelSegments.forEach((seg, i) => {
+        const start = wheelAngle + i * arc;
+        const end = start + arc;
+
+        wheelCtx.beginPath();
+        wheelCtx.fillStyle = seg.color;
+        wheelCtx.moveTo(centerX, centerY);
+        wheelCtx.arc(centerX, centerY, radius, start, end);
+        wheelCtx.fill();
+        wheelCtx.strokeStyle = "#FBBF24";
+        wheelCtx.lineWidth = 3;
+        wheelCtx.stroke();
+
+        wheelCtx.save();
+        wheelCtx.translate(centerX, centerY);
+        wheelCtx.rotate(start + arc / 2);
+        wheelCtx.textAlign = "right";
+        wheelCtx.fillStyle = "#ffffff";
+        wheelCtx.font = "bold 13px Inter";
+        wheelCtx.fillText(seg.label, radius - 15, 5);
+        wheelCtx.restore();
+      });
+
+      wheelCtx.beginPath();
+      wheelCtx.arc(centerX, centerY, 24, 0, 2 * Math.PI);
+      wheelCtx.fillStyle = "#ffffff";
+      wheelCtx.fill();
+      wheelCtx.strokeStyle = "#F59E0B";
+      wheelCtx.lineWidth = 4;
+      wheelCtx.stroke();
+
+      wheelCtx.fillStyle = "#C8102E";
+      wheelCtx.font = "bold 12px Inter";
+      wheelCtx.textAlign = "center";
+      wheelCtx.fillText("DIWALI", centerX, centerY + 4);
+    }
+
+    function spinWheel() {
+      if (isSpinning) return;
+      isSpinning = true;
+
+      const spinBtn = document.getElementById('spinActionBtn');
+      spinBtn.disabled = true;
+      spinBtn.innerText = "Spinning...";
+
+      const targetPrizeIndex = Math.floor(Math.random() * wheelSegments.length);
+      selectedPrize = wheelSegments[targetPrizeIndex];
+
+      const segmentArc = (2 * Math.PI) / wheelSegments.length;
+      const totalRotations = 5 * (2 * Math.PI);
+      const targetAngle = totalRotations + ( (3 * Math.PI / 2) - (targetPrizeIndex * segmentArc + segmentArc / 2) );
+
+      let startTimestamp = null;
+      const duration = 4000;
+
+      function step(timestamp) {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const elapsed = timestamp - startTimestamp;
+        const progress = Math.min(elapsed / duration, 1);
+
+        const easeOut = 1 - Math.pow(1 - progress, 3);
+        wheelAngle = targetAngle * easeOut;
+
+        drawWheel();
+
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        } else {
+          isSpinning = false;
+          spinBtn.disabled = false;
+          spinBtn.innerText = "Spin The Wheel!";
+          openQuizStage(selectedPrize);
+        }
+      }
+
+      requestAnimationFrame(step);
+    }
+
+    function openQuizStage(prize) {
+      document.getElementById('wheelStage').classList.add('hidden');
+      document.getElementById('quizStage').classList.remove('hidden');
+
+      document.getElementById('quizPrizeWon').innerText = `${prize.label} (Code: ${prize.code})`;
+
+      const quiz = diwaliQuizBank[Math.floor(Math.random() * diwaliQuizBank.length)];
+      document.getElementById('quizQuestionText').innerText = quiz.question;
+
+      const optsContainer = document.getElementById('quizOptionsContainer');
+      optsContainer.innerHTML = quiz.options.map((opt, idx) => `
+        <button onclick="handleQuizAnswer(${idx === quiz.correct})" class="w-full text-left p-3 rounded-xl bg-white border border-slate-200 hover:border-amber-400 font-semibold hover:bg-amber-50 transition">
+          ${String.fromCharCode(65 + idx)}. ${opt}
+        </button>
+      `).join('');
+    }
+
+    function handleQuizAnswer(isCorrect) {
+      if (isCorrect) {
+        if (typeof confetti === 'function') {
+          confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
+        }
+        document.getElementById('quizStage').classList.add('hidden');
+        document.getElementById('prizeClaimedStage').classList.remove('hidden');
+        document.getElementById('prizeClaimedMsg').innerText = `You won ${selectedPrize.label}! Use this Diwali code:`;
+        document.getElementById('wonCouponCode').innerText = selectedPrize.code;
+        showToast(`Correct! Unlocked ${selectedPrize.code} 🪔`);
+      } else {
+        showToast('Oops! Try again.');
+      }
+    }
+
+    function copyAndApplyWonCode() {
+      const code = document.getElementById('wonCouponCode').innerText;
+      appliedCoupon = code;
+      document.getElementById('cartCouponInput').value = code;
+      document.getElementById('calcCouponInput').value = code;
+      updateCartUI();
+      closeSpinWheelModal();
+      showToast(`Coupon ${code} applied to your cart! 🎉`);
+      toggleCartDrawer();
+    }
+
+    function openSpinWheelModal() {
+      document.getElementById('wheelStage').classList.remove('hidden');
+      document.getElementById('quizStage').classList.add('hidden');
+      document.getElementById('prizeClaimedStage').classList.add('hidden');
+      document.getElementById('spinWheelModal').classList.remove('hidden');
+      setTimeout(initWheelCanvas, 50);
+    }
+
+    function closeSpinWheelModal() {
+      document.getElementById('spinWheelModal').classList.add('hidden');
+    }
+
+    // ================= DUAL CALCULATOR =================
+    function openCalculatorModal() {
+      populateCalcProducts();
+      updateCalcEstimates();
+      document.getElementById('calculatorModal').classList.remove('hidden');
+    }
+
+    function closeCalculatorModal() {
+      document.getElementById('calculatorModal').classList.add('hidden');
+    }
+
+    function switchCalcTab(tab) {
+      const furn = document.getElementById('calcViewFurniture');
+      const math = document.getElementById('calcViewMath');
+      const btnFurn = document.getElementById('calcTabBtn-furniture');
+      const btnMath = document.getElementById('calcTabBtn-math');
+
+      if (tab === 'furniture') {
+        furn.classList.remove('hidden');
+        math.classList.add('hidden');
+        btnFurn.className = 'py-2 rounded-xl bg-white text-brand-red shadow-sm transition font-bold';
+        btnMath.className = 'py-2 rounded-xl text-slate-600 hover:text-slate-900 transition font-bold';
+      } else {
+        furn.classList.add('hidden');
+        math.classList.remove('hidden');
+        btnMath.className = 'py-2 rounded-xl bg-white text-brand-red shadow-sm transition font-bold';
+        btnFurn.className = 'py-2 rounded-xl text-slate-600 hover:text-slate-900 transition font-bold';
+      }
+    }
+
+    function populateCalcProducts() {
+      const select = document.getElementById('calcProductSelect');
+      if (select.children.length === 0) {
+        select.innerHTML = allProducts.map(p => `
+          <option value="${p.id}" ${currentActiveProduct.id === p.id ? 'selected' : ''}>
+            ${p.name} - ₹${p.price.toLocaleString('en-IN')}
+          </option>
+        `).join('');
+      }
+    }
+
+    function adjustCalcQty(delta) {
+      const input = document.getElementById('calcQty');
+      let val = (parseInt(input.value) || 1) + delta;
+      if (val < 1) val = 1;
+      input.value = val;
+      updateCalcEstimates();
+    }
+
+    function updateCalcEstimates() {
+      const select = document.getElementById('calcProductSelect');
+      const pId = parseInt(select.value) || allProducts[0].id;
+      const product = allProducts.find(p => p.id === pId) || allProducts[0];
+      const qty = parseInt(document.getElementById('calcQty').value) || 1;
+      const deliveryFee = parseInt(document.getElementById('calcDeliveryZone').value) || 0;
+      const coupon = (document.getElementById('calcCouponInput').value || '').trim().toUpperCase();
+
+      const subtotal = product.price * qty;
+      let discount = 0;
+
+      if (coupon === 'DIWALI500' && subtotal >= 5000) discount = 500;
+      else if (coupon === 'DIWALI8') discount = Math.round(subtotal * 0.08);
+      else if (coupon === 'DIWALI20') discount = Math.round(subtotal * 0.20);
+
+      const total = Math.max(0, subtotal - discount + deliveryFee);
+
+      document.getElementById('calcBreakdownSubtotal').innerText = `₹${subtotal.toLocaleString('en-IN')}`;
+      document.getElementById('calcBreakdownDiscount').innerText = `- ₹${discount.toLocaleString('en-IN')}`;
+      document.getElementById('calcBreakdownDelivery').innerText = deliveryFee === 0 ? 'FREE' : `₹${deliveryFee}`;
+      document.getElementById('calcBreakdownTotal').innerText = `₹${total.toLocaleString('en-IN')}`;
+    }
+
+    function addCalculatedSetToCart() {
+      const select = document.getElementById('calcProductSelect');
+      const pId = parseInt(select.value);
+      const qty = parseInt(document.getElementById('calcQty').value) || 1;
+      addToCart(pId, qty);
+      closeCalculatorModal();
+      toggleCartDrawer();
+    }
+
+    // Math Pad Logic
+    let mathExpr = '';
+    let mathJustCalculated = false;
+
+    function mathCalcNum(n) {
+      if (mathJustCalculated) { mathExpr = ''; mathJustCalculated = false; }
+      mathExpr += n;
+      document.getElementById('mathCalcDisplay').innerText = mathExpr;
+    }
+    function mathCalcOp(op) {
+      mathJustCalculated = false;
+      mathExpr += ` ${op} `;
+      document.getElementById('mathCalcDisplay').innerText = mathExpr;
+    }
+    function mathCalcClear() {
+      mathExpr = '';
+      document.getElementById('mathCalcDisplay').innerText = '0';
+      document.getElementById('mathCalcHistory').innerText = '';
+    }
+    function mathCalcBackspace() {
+      mathExpr = mathExpr.trim().slice(0, -1).trim();
+      document.getElementById('mathCalcDisplay').innerText = mathExpr || '0';
+    }
+    function mathCalcEquals() {
+      try {
+        const res = Function(`'use strict'; return (${mathExpr})`)();
+        document.getElementById('mathCalcHistory').innerText = mathExpr + ' =';
+        mathExpr = String(res);
+        document.getElementById('mathCalcDisplay').innerText = mathExpr;
+        mathJustCalculated = true;
+      } catch (e) {
+        document.getElementById('mathCalcDisplay').innerText = 'Error';
+        mathExpr = '';
+      }
+    }
+
+    // ================= CART & CHECKOUT =================
+    function quickAddToCart(id) {
+      addToCart(id, 1);
+    }
+
+    function addToCart(id, qty = 1) {
+      const p = allProducts.find(x => x.id === id);
+      if (!p) return;
+
+      const existing = cart.find(x => x.id === id);
+      if (existing) {
+        existing.quantity += qty;
+      } else {
+        cart.push({ ...p, quantity: qty });
+      }
+
+      updateCartUI();
+      showToast(`Added ${p.name} to Cart! 🪔`);
+    }
+
+    function updateCartItemQty(id, delta) {
+      const item = cart.find(x => x.id === id);
+      if (!item) return;
+      item.quantity += delta;
+      if (item.quantity <= 0) cart = cart.filter(x => x.id !== id);
+      updateCartUI();
+    }
+
+    function removeCartItem(id) {
+      cart = cart.filter(x => x.id !== id);
+      updateCartUI();
+    }
+
+    function toggleCartDrawer() {
+      document.getElementById('cartDrawer').classList.toggle('hidden');
+    }
+
+    function updateCartUI() {
+      const totalCount = cart.reduce((s, i) => s + i.quantity, 0);
+      document.getElementById('cartBadge').innerText = totalCount;
+      document.getElementById('cartCountHeader').innerText = totalCount;
+
+      const container = document.getElementById('cartItemsContainer');
+      if (cart.length === 0) {
+        container.innerHTML = `
+          <div class="py-12 text-center text-slate-400">
+            <i class="fa-solid fa-couch text-4xl mb-2 text-slate-300"></i>
+            <p class="font-bold text-slate-700 text-sm">Your cart is empty</p>
+            <p class="text-xs text-slate-500 mt-1">Explore our full Diwali furniture showcase.</p>
+          </div>
+        `;
+      } else {
+        container.innerHTML = cart.map(item => `
+          <div class="flex items-center gap-3 p-3 bg-slate-50 rounded-2xl border border-slate-100">
+            <img src="${item.image}" class="w-12 h-12 object-contain bg-white rounded-lg p-1 border">
+            <div class="flex-grow">
+              <h5 class="text-xs font-bold text-slate-900 line-clamp-1">${item.name}</h5>
+              <div class="text-xs font-black text-brand-red">₹${item.price.toLocaleString('en-IN')}</div>
+              <div class="flex items-center gap-2 mt-1">
+                <div class="flex items-center border border-slate-200 rounded bg-white text-xs">
+                  <button onclick="updateCartItemQty(${item.id}, -1)" class="px-2 font-bold">-</button>
+                  <span class="px-2 font-bold">${item.quantity}</span>
+                  <button onclick="updateCartItemQty(${item.id}, 1)" class="px-2 font-bold">+</button>
+                </div>
+                <button onclick="removeCartItem(${item.id})" class="text-[10px] text-slate-400 hover:text-red-500">Remove</button>
+              </div>
+            </div>
+            <div class="text-xs font-bold text-slate-800">
+              ₹${(item.price * item.quantity).toLocaleString('en-IN')}
+            </div>
+          </div>
+        `).join('');
+      }
+
+      const subtotal = cart.reduce((s, i) => s + (i.price * i.quantity), 0);
+      let discount = 0;
+      if (appliedCoupon === 'DIWALI500' && subtotal >= 5000) discount = 500;
+      else if (appliedCoupon === 'DIWALI8') discount = Math.round(subtotal * 0.08);
+      else if (appliedCoupon === 'DIWALI20') discount = Math.round(subtotal * 0.20);
+
+      const finalTotal = Math.max(0, subtotal - discount);
+
+      document.getElementById('cartSubtotal').innerText = `₹${subtotal.toLocaleString('en-IN')}`;
+      document.getElementById('cartDiscount').innerText = `- ₹${discount.toLocaleString('en-IN')}`;
+      document.getElementById('cartGrandTotal').innerText = `₹${finalTotal.toLocaleString('en-IN')}`;
+    }
+
+    function applyCartCoupon() {
+      const code = (document.getElementById('cartCouponInput').value || '').trim().toUpperCase();
+      if (['DIWALI500', 'DIWALI8', 'DIWALI20', 'FREECHAIR'].includes(code)) {
+        appliedCoupon = code;
+        updateCartUI();
+        showToast(`Diwali Coupon ${code} Applied! 🪔`);
+      } else {
+        showToast('Invalid Coupon. Try DIWALI500 or DIWALI20');
+      }
+    }
+
+    function toggleWishlist(id, e) {
+      if (e) e.stopPropagation();
+      const idx = wishlist.indexOf(id);
+      if (idx > -1) {
+        wishlist.splice(idx, 1);
+        showToast('Removed from Favorites');
+      } else {
+        wishlist.push(id);
+        showToast('Saved to Diwali Favorites ❤️');
+      }
+      document.getElementById('wishlistBadge').innerText = wishlist.length;
+      renderProducts(currentMainCategory === 'all' ? allProducts : allProducts.filter(p => p.category === currentMainCategory));
+    }
+
+    function toggleWishlistModal() {
+      const modal = document.getElementById('wishlistModal');
+      const container = document.getElementById('wishlistItemsContainer');
+      const items = allProducts.filter(p => wishlist.includes(p.id));
+
+      if (items.length === 0) {
+        container.innerHTML = `<p class="text-xs text-slate-400 text-center py-8">No saved items yet.</p>`;
+      } else {
+        container.innerHTML = items.map(p => `
+          <div class="flex items-center justify-between p-2.5 rounded-xl bg-slate-50 border border-slate-100">
+            <div class="flex items-center gap-2">
+              <img src="${p.image}" class="w-10 h-10 object-contain bg-white rounded border">
+              <div>
+                <h5 class="text-xs font-bold text-slate-900">${p.name}</h5>
+                <span class="text-xs font-black text-brand-red">₹${p.price.toLocaleString('en-IN')}</span>
+              </div>
+            </div>
+            <button onclick="addToCart(${p.id}, 1); toggleWishlist(${p.id});" class="px-3 py-1 bg-brand-red text-white text-xs font-bold rounded-lg">
+              Move to Cart
+            </button>
+          </div>
+        `).join('');
+      }
+
+      modal.classList.toggle('hidden');
+    }
+
+    function openCheckoutModal() {
+      if (cart.length === 0) {
+        showToast('Please add furniture to cart first.');
+        return;
+      }
+      toggleCartDrawer();
+
+      const subtotal = cart.reduce((s, i) => s + (i.price * i.quantity), 0);
+      let discount = 0;
+      if (appliedCoupon === 'DIWALI500' && subtotal >= 5000) discount = 500;
+      else if (appliedCoupon === 'DIWALI8') discount = Math.round(subtotal * 0.08);
+      else if (appliedCoupon === 'DIWALI20') discount = Math.round(subtotal * 0.20);
+
+      document.getElementById('chkTotal').innerText = `₹${(subtotal - discount).toLocaleString('en-IN')}`;
+      document.getElementById('checkoutFormContent').classList.remove('hidden');
+      document.getElementById('checkoutSuccessContent').classList.add('hidden');
+      document.getElementById('checkoutModal').classList.remove('hidden');
+    }
+
+    function closeCheckoutModal() {
+      document.getElementById('checkoutModal').classList.add('hidden');
+    }
+
+    function submitOrder() {
+      const name = document.getElementById('chkName').value.trim();
+      const phone = document.getElementById('chkPhone').value.trim();
+      const addr = document.getElementById('chkAddress').value.trim();
+
+      if (!name || !phone || !addr) {
+        showToast('Please fill Name, Phone and Jamnagar Address.');
+        return;
+      }
+
+      const orderRef = `#DIWALI-JAM-${Math.floor(1000 + Math.random() * 9000)}`;
+      document.getElementById('successOrderRef').innerText = `Order Ref: ${orderRef}`;
+
+      document.getElementById('checkoutFormContent').classList.add('hidden');
+      document.getElementById('checkoutSuccessContent').classList.remove('hidden');
+
+      cart = [];
+      updateCartUI();
+      if (typeof confetti === 'function') confetti();
+      showToast('Diwali Order Booked with Jamnagar Showroom! 🚚');
+    }
+
+    function showToast(msg) {
+      const c = document.getElementById('toastContainer');
+      const t = document.createElement('div');
+      t.className = 'bg-slate-900 text-white text-xs font-bold px-4 py-3 rounded-2xl shadow-2xl border border-amber-400 flex items-center gap-2 transform transition-all duration-300 translate-y-2 opacity-0 pointer-events-auto';
+      t.innerHTML = `<span>🪔</span><span>${msg}</span>`;
+      c.appendChild(t);
+
+      setTimeout(() => { t.classList.remove('translate-y-2', 'opacity-0'); }, 20);
+      setTimeout(() => {
+        t.classList.add('opacity-0', 'translate-y-2');
+        setTimeout(() => t.remove(), 300);
+      }, 3200);
+    }
+
+    function scrollToSection(id) {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      renderProducts(allProducts);
+      updateCartUI();
+    });
+  </script>
+
+</body>
+</html>
